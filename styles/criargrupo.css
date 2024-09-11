@@ -1,0 +1,204 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  overflow-x: hidden; 
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  display: flex;
+}
+
+.icone-menu {
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #80c8d8;
+  color: #fff;
+  position: fixed;
+  z-index: 2;
+  top: 15px;
+  left: 7px;
+}
+
+.titulo {
+  text-align: center;
+  color: #155967;
+  padding-top: 40px;
+}
+
+.texto {
+  text-align: center;
+}
+
+.sidebar {
+  height: 100%;
+  width: 60px; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #80c8d8;
+  overflow-x: hidden;
+  transition: width 0.3s;
+  padding-top: 20px;
+  z-index: 1;
+}
+
+.sidebar.aberto {
+  width: 250px; 
+}
+
+.sidebar .logo {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.sidebar .logo img {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.sidebar .logo .logo-texto {
+  display: none; 
+}
+
+.sidebar.aberto .logo .logo-texto {
+  display: inline; 
+}
+
+.sidebar a {
+  padding: 15px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.sidebar a .link-texto {
+  display: none; 
+}
+
+.sidebar.aberto a .link-texto {
+  display: inline; 
+  margin-left: 10px;
+}
+
+.sidebar a:hover {
+  background-color: #559da8;
+}
+
+.sidebar .botao-links {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+}
+
+.content {
+  padding: 20px;
+  margin: 0 auto; 
+  max-width: 1000px; 
+}
+
+.container {
+  width: 350px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.titulo-criar-grupo {
+  text-align: center;
+  color: #155967;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.formulario {
+  margin-bottom: 20px;
+}
+
+.formulario label {
+  font-size: 18px;
+  color: #333;
+}
+
+.formulario input {
+  width: 50%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.convidar-amigo {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.convidar-amigo p {
+  font-size: 18px;
+  color: #333;
+}
+
+.convidar-amigo .link {
+  color: #80c8d8;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.convidar-amigo .link:hover {
+  text-decoration: underline;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.form button {
+  width: 150px; 
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #80c8d8;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 15px; 
+  
+}
+
+.form button#cancelar {
+  background-color: #ccc;
+}
+
+.form button#cancel:hover{
+  background-color: #929292;
+  color: white;
+}
+
+.form button{
+  background-color: #80c8d8;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+.form button:hover {
+  background-color: #559da8;
+}
+
+.icone-perfil {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}

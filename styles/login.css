@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  .container {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 350px;
+  }
+
+  .logo {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .logo img {
+    width: 100px;
+  }
+
+  .formulario {
+    margin-bottom: 15px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+  }
+
+.submit{
+  background-color: #80c8d8;
+  color: white;
+  transition: background-color 0.3s ease;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 50%;
+  font-size: 18px;
+  margin-top: 40px;
+}
+.submit:hover{
+  background-color: #559da8;
+}
+
+.login{
+  text-align: center;
+  font-size: 32px;
+    color: #155967;
+}
+
+
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+  input[type="submit"]:hover {
+    background-color: #559da8;
+  }
+
+  .esqueci-senha {
+    text-align: left;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+
+  .esqueci-senha a {
+    color: #559da8;
+    text-decoration: none;
+  }
+
+  .esqueci-senha a:hover {
+    text-decoration: underline;
+  }
+
+.conta{
+  text-align: center;
+  padding: 10px;
+  font-size: 13px;
+}
+
+  .criar-conta {
+    text-align: center;
+  }
+
+  .criar-conta a {
+    color: #559da8;
+    text-decoration: none;
+  }
+
+  .criar-conta a:hover {
+    text-decoration: underline;
+  }
+
