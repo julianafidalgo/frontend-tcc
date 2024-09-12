@@ -1,0 +1,218 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    overflow-x: hidden; 
+}
+
+.icone-menu {
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #80c8d8;
+    color: #fff;
+    position: fixed;
+    z-index: 2;
+    top: 15px;
+    left: 7px;
+}
+
+.sidebar {
+    height: 100%;
+    width: 60px; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #80c8d8;
+    overflow-x: hidden;
+    transition: width 0.3s;
+    padding-top: 20px;
+    z-index: 1;
+}
+
+.sidebar.aberto {
+    width: 250px; 
+}
+
+.sidebar .logo {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.sidebar .logo img {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.sidebar .logo .logo-texto {
+    display: none; 
+}
+
+.sidebar.aberto .logo .logo-texto {
+    display: inline; 
+}
+
+.sidebar a {
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.sidebar a .link-texto {
+    display: none; 
+}
+
+.sidebar.aberto a .link-texto {
+    display: inline; 
+    margin-left: 10px;
+}
+
+.sidebar a:hover {
+    background-color: #559da8;
+}
+
+.sidebar .botao-links {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+}
+
+.content {
+    flex: 1;
+    padding: 40px;
+}
+
+h1 {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 10px;
+    color: #155967;
+}
+
+.profile-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.profile-header .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+    float:  left;
+}
+
+.profile-header h2 {
+    text-align: center;
+    font-size: 32px;
+    color: #155967;
+    margin-bottom: 5px;
+}
+
+.profile-header p {
+    color: #999;
+    font-size: 14px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+}
+
+form input {
+    width: 80%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+section >i  {
+    color: #999;
+    font-size: 18px;
+}
+
+section {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.confirm-btn {
+    width: 200px;
+    background-color: #80c8d8;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.confirm-btn:hover {
+    background-color: #559da8;
+  }
+
+.cancel-btn {
+    width: 200px;
+    background-color: #ccc;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.cancel-btn:hover{
+    background-color: #929292;
+    color: white;
+  }
+
+.delete-account {
+    display: block;
+    text-align: center;
+    color: #999;
+    margin-top: 10px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #ccc;
+}
+
+.delete-account:hover {
+    text-decoration: underline;
+}

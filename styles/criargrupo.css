@@ -130,6 +130,7 @@ body {
 .formulario label {
   font-size: 18px;
   color: #333;
+  font-weight: bold;
 }
 
 .formulario input {
@@ -179,21 +180,21 @@ body {
   
 }
 
-.form button#cancelar {
+#cancelar {
   background-color: #ccc;
 }
 
-.form button#cancel:hover{
+#cancelar:hover{
   background-color: #929292;
   color: white;
 }
 
-.form button{
+#criar-grupo{
   background-color: #80c8d8;
   color: white;
   transition: background-color 0.3s ease;
 }
-.form button:hover {
+#criar-grupo:hover {
   background-color: #559da8;
 }
 

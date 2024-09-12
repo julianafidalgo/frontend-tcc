@@ -1,0 +1,268 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    overflow-x: hidden; 
+}
+
+.icone-menu {
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #80c8d8;
+  color: #fff;
+  position: fixed;
+  z-index: 2;
+  top: 15px;
+  left: 7px;
+}
+
+.sidebar {
+  height: 100%;
+  width: 60px; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #80c8d8;
+  overflow-x: hidden;
+  transition: width 0.3s;
+  padding-top: 20px;
+  z-index: 1;
+}
+
+.sidebar.aberto {
+  width: 250px; 
+}
+
+.sidebar .logo {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.sidebar .logo img {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.sidebar .logo .logo-texto {
+  display: none; 
+}
+
+.sidebar.aberto .logo .logo-texto {
+  display: inline; 
+}
+
+.sidebar a {
+  padding: 15px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.sidebar a .link-texto {
+  display: none; 
+}
+
+.sidebar.aberto a .link-texto {
+  display: inline; 
+  margin-left: 10px;
+}
+
+.sidebar a:hover {
+  background-color: #559da8;
+}
+
+.sidebar .botao-links {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.menu-item {
+  margin: 20px 0;
+}
+
+.menu-item img {
+  width: 30px;
+  cursor: pointer;
+}
+
+.menu-item.active img {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 24px;
+  color: #155967;
+  padding: 15px;
+  margin: 0 auto; 
+  max-width: 1000px;
+  text-align: center;
+  padding-top: 40px; 
+  font-size: 35px;
+}
+
+.header p {
+  font-size: 30px;
+  color: #666;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  text-align: center; 
+  margin: 0 auto; 
+  max-width: 800px; 
+}
+
+/* Timer Box */
+.timer-box {
+  background-color: #cfd8d8;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Timer Display */
+#circularProgressBar {
+  width: 300px;
+  height: 200px;
+  background-color: #87aab0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.progress-value {
+  font-size: 64px;
+  color: #004D4F;
+  font-weight: bold;
+}
+
+/* Controls */
+.controls, .extra-controls, .timer-type-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn.start {
+  background-color: #3cdd5f;
+  color: #666;
+  transition: background-color 0.3s ease;
+}
+
+.btn.start:hover{
+  background-color: #509c60;
+  color: #666;
+}
+
+.btn.pause {
+  background-color: #dee069;
+  color: #666;
+  transition: background-color 0.3s ease;
+}
+
+.btn.pause:hover{
+  background-color: #a9ab63;
+  color: #666;
+}
+
+.btn.stop {
+  background-color: #dc6d69;
+  color: #666;
+  transition: background-color 0.3s ease;
+}
+
+.btn.stop:hover {
+  background-color: #ae605d;
+  color: #666;
+}
+
+
+.btn.add-time, .btn.reset {
+  background-color: #666666;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.btn.add-time:hover {
+  background-color: #474545;
+  color: white;
+}
+
+.btn.reset:hover{
+  background-color: #474545;
+  color: white;
+}
+
+/* Timer Type Controls */
+.timer-type-controls .btn {
+  background-color: #81b9bf;
+  color: #004D4F;
+}
+
+.timer-type-controls .btn.active {
+  background-color: #004D4F;
+  color: white;
+}
+
+/* User profile icon */
+.icone-perfil {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.icone-perfil img {
+  width: 40px;
+}

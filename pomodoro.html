@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/styles/pomodoro.css">
+    <title>Cronômetro - Pomodoro</title>
+</head>
+<body>
+    <div class="container">
+        <div class="icone-menu" onclick="toggleSidebar()">☰</div>
+
+        <div class="sidebar" id="sidebar">
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+            <span class="logo-texto">TAG</span>
+        </div>
+        <a href="#grupos"><i class="fas fa-users"></i> <span class="link-texto">Grupos</span></a>
+        <a href="#cronometro"><i class="fas fa-clock"></i> <span class="link-texto">Cronômetro</span></a>
+        <a href="#perguntas"><i class="fas fa-question"></i> <span class="link-texto">Perguntas</span></a>
+        <a href="#todo"><i class="fas fa-tasks"></i> <span class="link-texto">To-do</span></a>
+        <a href="#ranking"><i class="fas fa-chart-bar"></i> <span class="link-texto">Ranking</span></a>
+        <a href="#kanban"><i class="fas fa-columns"></i> <span class="link-texto">Kanban</span></a>
+
+        <div class="botao-links">
+            <a href="#configuracoes"><i class="fas fa-cog"></i> <span class="link-texto">Configurações</span></a>
+            <a href="#sair"><i class="fas fa-sign-out-alt"></i> <span class="link-texto">Sair</span></a>
+        </div>
+    </div>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('aberto');
+        }
+    </script>
+        <!-- Main content -->
+        <div class="main-content">
+            <div class="header">
+                <h1>Cronômetro</h1>
+                <p>Hora de focar!</p>
+            </div>
+
+            <div class="timer-box">
+                <div id="circularProgressBar" class="timer-display">
+                    <span class="progress-value">25:00</span>
+                </div>
+                <div class="controls">
+                    <button class="btn start" onclick="startTimer()">Iniciar</button>
+                    <button class="btn pause" onclick="stopTimer()">Pausar</button>
+                    <button class="btn stop" onclick="pauseTimer()">Parar</button>
+                </div>
+                <div class="extra-controls">
+                    <button class="btn add-time" onclick="addTime()">+5</button>
+                    <button class="btn reset" onclick="resetTimer()">Reiniciar</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="icone-perfil">
+            <img src="icons/user.png" alt="Usuário">
+        </div>
+    </div>
+
+    <script>
+        const circularProgressBar = document.querySelector("#circularProgressBar");
+        const circularProgressBarNumber = document.querySelector("#circularProgressBar .progress-value");
+        const buttonTypePomodoro = document.querySelector("#buttonTypePomodoro");
+        const buttonTypeShortBreak = document.querySelector("#buttonTypeShortBreak");
+
+        const audio = new Audio('alarm.mp3');
+
+        const pomodoroTimerInSeconds = 1500; 
+        const shortBreakTimerInSeconds = 300;
+
+        let progressInterval;
+        let timerValue = pomodoroTimerInSeconds;
+        let multiplierFactor = 360 / timerValue;
+        let pause = false;
+
+        function formatNumberInStringMinute(number){
+            const minutes = Math.trunc(number / 60).toString().padStart(2, '0');
+            const seconds = Math.trunc(number % 60).toString().padStart(2, '0');
+            return `${minutes}:${seconds}`;
+        }
+
+        const startTimer = () => {
+            progressInterval = setInterval(() => {
+                if (timerValue > 0) {
+                    timerValue--;
+                    setInfoCircularProgressBar();
+                } else {
+                    clearInterval(progressInterval);
+                    //audio.play();        
+                }
+            }, 1000);
+        }
+
+        const stopTimer = () => {
+            timerValue = 0;
+        }
+
+        const pauseTimer = () => {
+            clearInterval(progressInterval);
+
+            multiplierFactor = 360 / timerValue;
+            setInfoCircularProgressBar();    
+
+        }
+
+        const resetTimer = () => {
+            timerValue = pomodoroTimerInSeconds;
+        }
+
+        const addTime = () => {
+            timerValue = timerValue+ 300;
+        }
+
+        function setInfoCircularProgressBar(){
+            circularProgressBarNumber.textContent = `${formatNumberInStringMinute(timerValue)}`;
+        }
+
+        
+    </script>
+</body>
+</html>
