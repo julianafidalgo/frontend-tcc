@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="/styles/configuracoes.css">
+    <link rel="stylesheet" href="./styles/configuracoes.css">
     <title>Configurações - Editar Perfil</title>
 </head>
 <body>
@@ -15,16 +15,16 @@
             <img src="logo.png" alt="Logo">
             <span class="logo-texto">TAG</span>
         </div>
-        <a href="#grupos"><i class="fas fa-users"></i> <span class="link-texto">Grupos</span></a>
-        <a href="#cronometro"><i class="fas fa-clock"></i> <span class="link-texto">Cronômetro</span></a>
-        <a href="#perguntas"><i class="fas fa-question"></i> <span class="link-texto">Perguntas</span></a>
-        <a href="#todo"><i class="fas fa-tasks"></i> <span class="link-texto">To-do</span></a>
-        <a href="#ranking"><i class="fas fa-chart-bar"></i> <span class="link-texto">Ranking</span></a>
-        <a href="#kanban"><i class="fas fa-columns"></i> <span class="link-texto">Kanban</span></a>
+        <a href="#grupos" onclick="window.location.href='./grupos.html'"><i class="fas fa-users"></i> <span class="link-texto">Grupos</span></a>
+        <a href="#cronometro" onclick="window.location.href='./pomodoro.html'"><i class="fas fa-clock"></i> <span class="link-texto">Cronômetro</span></a>
+        <a href="#perguntas" onclick="window.location.href='./perguntas.html'"><i class="fas fa-question"></i> <span class="link-texto">Perguntas</span></a>
+        <a href="#todo" onclick="window.location.href='./todo.html'"><i class="fas fa-tasks"></i> <span class="link-texto">To-do</span></a>
+        <a href="#ranking" onclick="window.location.href='./ranking.html'"><i class="fas fa-chart-bar"></i> <span class="link-texto">Ranking</span></a>
+        <a href="#kanban" onclick="window.location.href='./kanban.html'"><i class="fas fa-columns"></i> <span class="link-texto">Kanban</span></a>
 
         <div class="botao-links">
-            <a href="#configuracoes"><i class="fas fa-cog"></i> <span class="link-texto">Configurações</span></a>
-            <a href="#sair"><i class="fas fa-sign-out-alt"></i> <span class="link-texto">Sair</span></a>
+            <a href="#configuracoes" onclick="window.location.href='./configuracoes.html'"><i class="fas fa-cog"></i> <span class="link-texto">Configurações</span></a>
+            <a href="#sair" onclick="window.location.href='./login.html'"><i class="fas fa-sign-out-alt"></i> <span class="link-texto">Sair</span></a>
         </div>
     </div>
     <script>
@@ -60,7 +60,7 @@
                 </section>
                 <button type="submit" class="confirm-btn">Confirmar</button>
                 <button type="button" class="cancel-btn">Cancelar</button>
-                <a href="#" class="delete-account">Deletar conta</a>
+                <a href="#" class="delete-account" onclick="window.location.href='./deletarconta.html'">Deletar conta</a>
             </form>
         </div>
     </div>

@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupos</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="./styles/telaprincipal.css">
-    <title>Tela Principal</title>
+    <link rel="stylesheet" href="./styles/grupos.css">
 </head>
 <body>
+    <!--Início Side-bar-->
     <div class="icone-menu" onclick="toggleSidebar()">☰</div>
 
     <div class="sidebar" id="sidebar">
@@ -24,33 +25,37 @@
 
         <div class="botao-links">
             <a href="#configuracoes" onclick="window.location.href='./configuracoes.html'"><i class="fas fa-cog"></i> <span class="link-texto">Configurações</span></a>
-            <a href="#sair" onclick="window.location.href='./login.html'"><i class="fas fa-sign-out-alt"></i> <span class="link-texto">Sair</span></a>
+            <a href="#sair"><i class="fas fa-sign-out-alt"></i> <span class="link-texto">Sair</span></a>
         </div>
     </div>
     <div class="icone-perfil">
         <img src="icons/user.png" alt="Usuário">
     </div>
-
-    <div class="content" id="content">
-        <h1 class="titulo">Olá, {usuário}!</h1>
-    </div>
-    <p class="texto-inicial"><strong>Pronto para começar?</strong>
-    </p>
-    <p class="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     <script>
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('aberto');
         }
     </script>
+    <!--Fim Side-bar-->
+
+    <div class="content">
+            <h1>Grupos</h1>
+            <div class="user-icon">
+                <!--<img src="user-icon.png" alt="Usuário">-->
+            </div>
+        <div class="create-group">
+            <a href="#" onclick="window.location.href='./criargrupo.html'">+ Criar grupo</a>
+        </div>
+        <div class="groups-section">
+            <h2>Meus grupos</h2>
+            <div class="group-list">
+                <div class="group">The Nilsons :)</div>
+                <div class="group">Café e Estudos</div>
+                <div class="group">apenas alfas</div>
+                <div class="group">Futuros Devs &lt;/&gt;</div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

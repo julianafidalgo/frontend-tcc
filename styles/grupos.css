@@ -1,10 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
     overflow-x: hidden; 
+    text-align: center;
 }
+
 
 .icone-menu {
     font-size: 30px;
@@ -16,30 +25,6 @@ body {
     z-index: 2;
     top: 15px;
     left: 7px;
-}
- 
-.titulo {
-    text-align: center;
-    color: #155967;
-    padding-top: 40px;
-}
-
-.texto-inicial {
-    font-size: 30px;
-    text-align: center;
-    margin-top: 10px;
-    color: #155967;
-}
-
-.texto{
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center; 
-    text-align: center; 
-    margin: 0 auto; 
-    max-width: 800px; 
-    padding: 20px; 
 }
 .sidebar {
     height: 100%;
@@ -110,15 +95,65 @@ body {
     width: 100%;
 }
 
+
 .icone-perfil {
     position: absolute;
     top: 20px;
     right: 20px;
 }
   
-
 .content {
+    flex-grow: 1;
+    padding: 40px;
+    background-color: #f7f7f7;
+    flex: 1;
+}
+
+
+h1 {
+    font-size: 30px;
+    margin-top: 10px;
+    color: #155967;
+}
+
+.user-icon img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.create-group a {
+    color: #a6b9b9;
+    font-size: 1.2em;
+    text-decoration: none;
+    margin: 20px 0;
+    display: inline-block;
+}
+
+.groups-section {
+    margin-top: 40px;
+}
+
+.groups-section h2 {
+    color: #4a7d7e;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.group-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.group {
+    background-color: #8bb1b1;
     padding: 20px;
-    margin: 0 auto; 
-    max-width: 1000px; 
+    border-radius: 10px;
+    color: white;
+    width: 150px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.2em;
 }
