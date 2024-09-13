@@ -1,9 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
     overflow-x: hidden; 
+    text-align: center;
 }
 
 .icone-menu {
@@ -118,7 +126,74 @@ body {
   
 
 .content {
-    padding: 20px;
-    margin: 0 auto; 
-    max-width: 1000px; 
+    flex-grow: 1;
+    padding: 40px;
+    background-color: #f7f7f7;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    color: #4a7d7e;
+    font-size: 2em;
+    text-align: center;
+}
+
+.delete-account {
+    background-color: #fff;
+    border: 2px solid #c5dbdb;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.delete-account h2 {
+    color: #4a7d7e;
+    font-size: 1.5em;
+}
+
+.delete-account .info-icon {
+    margin-right: 5px;
+}
+
+.user-icon img {
+    width: 100px;
+    height: 100px;
+    margin: 20px 0;
+}
+
+.confirmation-text {
+    color: #9b9b9b;
+    margin: 20px 0;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.delete-btn {
+    background-color: #8bb1b1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-btn {
+    background-color: white;
+    color: #8bb1b1;
+    border: 1px solid #8bb1b1;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
 }
