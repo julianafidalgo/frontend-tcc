@@ -202,7 +202,7 @@ body {
 }
 
 .btn.start:hover{
-  background-color: #509c60;
+  background-color: #64ae73;
   color: #666;
 }
 
@@ -212,22 +212,21 @@ body {
   transition: background-color 0.3s ease;
 }
 
-.btn.pause:hover{
-  background-color: #a9ab63;
+.btn.pause:hover {
+  background-color: #c8c968;
   color: #666;
 }
 
-.btn.stop {
-  background-color: #dc6d69;
+.btn.resume {
+  background-color: #dee069;
   color: #666;
   transition: background-color 0.3s ease;
 }
 
-.btn.stop:hover {
-  background-color: #ae605d;
+.btn.resume:hover {
+  background-color: #c8c968;
   color: #666;
 }
-
 
 .btn.add-time, .btn.reset {
   background-color: #666666;

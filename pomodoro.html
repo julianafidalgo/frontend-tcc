@@ -12,29 +12,22 @@
         <div class="icone-menu" onclick="toggleSidebar()">☰</div>
 
         <div class="sidebar" id="sidebar">
-        <div class="logo">
-            <img src="logo.png" alt="Logo">
-            <span class="logo-texto">TAG</span>
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+                <span class="logo-texto">TAG</span>
+            </div>
+            <a href="#grupos"><i class="fas fa-users"></i> <span class="link-texto">Grupos</span></a>
+            <a href="#cronometro"><i class="fas fa-clock"></i> <span class="link-texto">Cronômetro</span></a>
+            <a href="#perguntas"><i class="fas fa-question"></i> <span class="link-texto">Perguntas</span></a>
+            <a href="#todo"><i class="fas fa-tasks"></i> <span class="link-texto">To-do</span></a>
+            <a href="#ranking"><i class="fas fa-chart-bar"></i> <span class="link-texto">Ranking</span></a>
+            <a href="#kanban"><i class="fas fa-columns"></i> <span class="link-texto">Kanban</span></a>
+            <div class="botao-links">
+                <a href="#configuracoes"><i class="fas fa-cog"></i> <span class="link-texto">Configurações</span></a>
+                <a href="#sair"><i class="fas fa-sign-out-alt"></i> <span class="link-texto">Sair</span></a>
+            </div>
         </div>
-        <a href="#grupos"><i class="fas fa-users"></i> <span class="link-texto">Grupos</span></a>
-        <a href="#cronometro"><i class="fas fa-clock"></i> <span class="link-texto">Cronômetro</span></a>
-        <a href="#perguntas"><i class="fas fa-question"></i> <span class="link-texto">Perguntas</span></a>
-        <a href="#todo"><i class="fas fa-tasks"></i> <span class="link-texto">To-do</span></a>
-        <a href="#ranking"><i class="fas fa-chart-bar"></i> <span class="link-texto">Ranking</span></a>
-        <a href="#kanban"><i class="fas fa-columns"></i> <span class="link-texto">Kanban</span></a>
 
-        <div class="botao-links">
-            <a href="#configuracoes"><i class="fas fa-cog"></i> <span class="link-texto">Configurações</span></a>
-            <a href="#sair"><i class="fas fa-sign-out-alt"></i> <span class="link-texto">Sair</span></a>
-        </div>
-    </div>
-    <script>
-        function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('aberto');
-        }
-    </script>
-        <!-- Main content -->
         <div class="main-content">
             <div class="header">
                 <h1>Cronômetro</h1>
@@ -47,14 +40,13 @@
                 </div>
                 <div class="controls">
                     <button class="btn start" onclick="startTimer()">Iniciar</button>
-                    <button class="btn pause" onclick="stopTimer()">Pausar</button>
-                    <button class="btn stop" onclick="pauseTimer()">Parar</button>
+                    <button id="pauseButton" class="btn pause" onclick="pauseTimer()">Pausar</button>
+                    <button id="resumeButton" class="btn resume" onclick="resumeTimer()" style="display: none;">Retomar</button>
                 </div>
                 <div class="extra-controls">
                     <button class="btn add-time" onclick="addTime()">+5</button>
                     <button class="btn reset" onclick="resetTimer()">Reiniciar</button>
                 </div>
-
             </div>
         </div>
 
@@ -64,64 +56,96 @@
     </div>
 
     <script>
+        let timer;
+        let isRunning = false;
+        let isPaused = false;
+        let remainingTime = 25 * 60; // 25 minutos em segundos
+
         const circularProgressBar = document.querySelector("#circularProgressBar");
         const circularProgressBarNumber = document.querySelector("#circularProgressBar .progress-value");
-        const buttonTypePomodoro = document.querySelector("#buttonTypePomodoro");
-        const buttonTypeShortBreak = document.querySelector("#buttonTypeShortBreak");
+        const pauseButton = document.querySelector("#pauseButton");
+        const resumeButton = document.querySelector("#resumeButton");
 
-        const audio = new Audio('alarm.mp3');
-
-        const pomodoroTimerInSeconds = 1500; 
-        const shortBreakTimerInSeconds = 300;
-
-        let progressInterval;
-        let timerValue = pomodoroTimerInSeconds;
-        let multiplierFactor = 360 / timerValue;
-        let pause = false;
-
-        function formatNumberInStringMinute(number){
-            const minutes = Math.trunc(number / 60).toString().padStart(2, '0');
-            const seconds = Math.trunc(number % 60).toString().padStart(2, '0');
-            return `${minutes}:${seconds}`;
+        function formatNumberInStringMinute(number) {
+            const minutes = Math.floor(number / 60);
+            const seconds = number % 60;
+            return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
         }
 
-        const startTimer = () => {
-            progressInterval = setInterval(() => {
-                if (timerValue > 0) {
-                    timerValue--;
-                    setInfoCircularProgressBar();
-                } else {
-                    clearInterval(progressInterval);
-                    //audio.play();        
+        function updateDisplay() {
+            circularProgressBarNumber.textContent = formatNumberInStringMinute(remainingTime);
+        }
+
+        function startTimer() {
+            if (isRunning && !isPaused) return;
+
+            isRunning = true;
+            isPaused = false;
+
+            timer = setInterval(() => {
+                if (remainingTime <= 0) {
+                    clearInterval(timer);
+                    isRunning = false;
+                    return;
+                }
+
+                if (!isPaused) {
+                    remainingTime--;
+                    updateDisplay();
                 }
             }, 1000);
+
+            // Mostrar o botão de pausar e ocultar o botão de retomar
+            pauseButton.style.display = 'unset';
+            resumeButton.style.display = 'none';
         }
 
-        const stopTimer = () => {
-            timerValue = 0;
+        function pauseTimer() {
+            isPaused = true;
+
+            // Mostrar o botão de retomar e ocultar o botão de pausar
+            pauseButton.style.display = 'none';
+            resumeButton.style.display = 'unset';
         }
 
-        const pauseTimer = () => {
-            clearInterval(progressInterval);
+        function resumeTimer() {
+            isPaused = false;
 
-            multiplierFactor = 360 / timerValue;
-            setInfoCircularProgressBar();    
-
+            // Mostrar o botão de pausar e ocultar o botão de retomar
+            pauseButton.style.display = 'unset';
+            resumeButton.style.display = 'none';
         }
 
-        const resetTimer = () => {
-            timerValue = pomodoroTimerInSeconds;
+        function stopTimer() {
+            clearInterval(timer);
+            isRunning = false;
+            isPaused = false;
+
+            // Mostrar o botão de pausar e ocultar o botão de retomar
+            pauseButton.style.display = 'unset';
+            resumeButton.style.display = 'none';
         }
 
-        const addTime = () => {
-            timerValue = timerValue+ 300;
+        function resetTimer() {
+            stopTimer();
+            remainingTime = 25 * 60; // Reiniciar para 25 minutos
+            updateDisplay();
         }
 
-        function setInfoCircularProgressBar(){
-            circularProgressBarNumber.textContent = `${formatNumberInStringMinute(timerValue)}`;
+        function addTime() {
+            if (isRunning && !isPaused) {
+                remainingTime += 5 * 60;
+                updateDisplay();
+            }
         }
 
-        
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('aberto');
+        }
+
+        // Atualiza o display inicialmente
+        updateDisplay();
     </script>
 </body>
 </html>

@@ -176,7 +176,7 @@ section {
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom: 10px;
     transition: background-color 0.3s ease;
 }
@@ -193,7 +193,7 @@ section {
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom: 10px;
     transition: background-color 0.3s ease;
 }
@@ -206,11 +206,10 @@ section {
 .delete-account {
     display: block;
     text-align: center;
-    color: #999;
+    color: #cb8787;
     margin-top: 10px;
     font-size: 14px;
     text-decoration: none;
-    color: #ccc;
 }
 
 .delete-account:hover {
