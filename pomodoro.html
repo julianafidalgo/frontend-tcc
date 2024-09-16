@@ -3,28 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="./styles/pomodoro.css">
-    <title>Cronômetro - Pomodoro</title>
+    <title>Cronômetro</title>
 </head>
 <body>
     <div class="container">
-        <div class="icone-menu" onclick="toggleSidebar()">☰</div>
+            <div class="icone-menu" onclick="toggleSidebar()">
+                <span class="material-symbols-outlined">menu</span>
+            </div>
 
         <div class="sidebar" id="sidebar">
             <div class="logo">
-                <img src="logo.png" alt="Logo">
+                <img src="" alt="Logo">
                 <span class="logo-texto">TAG</span>
             </div>
-            <a href="#grupos" onclick="window.location.href='./grupos.html'"><i class="fas fa-users"></i> <span class="link-texto">Grupos</span></a>
-            <a href="#cronometro" onclick="window.location.href='./pomodoro.html'"><i class="fas fa-clock"></i> <span class="link-texto">Cronômetro</span></a>
-            <a href="#perguntas" onclick="window.location.href='./perguntas.html'"><i class="fas fa-question"></i> <span class="link-texto">Perguntas</span></a>
-            <a href="#todo" onclick="window.location.href='./todo.html'"><i class="fas fa-tasks"></i> <span class="link-texto">To-do</span></a>
-            <a href="#ranking" onclick="window.location.href='./ranking.html'"><i class="fas fa-chart-bar"></i> <span class="link-texto">Ranking</span></a>
-            <a href="#kanban" onclick="window.location.href='./kanban.html'"><i class="fas fa-columns"></i> <span class="link-texto">Kanban</span></a>
+            <a href="#grupos" onclick="window.location.href='./grupos.html'">
+                <span class="material-symbols-outlined">groups</span> 
+                <span class="link-texto">Grupos</span>
+            </a>
+            <a href="#cronometro" onclick="window.location.href='./pomodoro.html'">
+                <span class="material-symbols-outlined">alarm</span> 
+                <span class="link-texto">Cronômetro</span>
+            </a>
+            <a href="#perguntas" onclick="window.location.href='./perguntas.html'">
+                <span class="material-symbols-outlined">design_services</span>
+                <span class="link-texto">Perguntas</span>
+            </a>
+            <a href="#ranking" onclick="window.location.href='./ranking.html'">
+                <span class="material-symbols-outlined">star</span>
+                <span class="link-texto">Ranking</span>
+            </a>
+            <a href="#tarefas" onclick="window.location.href='./tarefas.html'">
+                <span class="material-symbols-outlined">view_kanban</span>
+                <span class="link-texto">Tarefas</span>
+            </a>
+    
             <div class="botao-links">
-                <a href="#configuracoes" onclick="window.location.href='./configuracoes.html'"><i class="fas fa-cog"></i> <span class="link-texto">Configurações</span></a>
-                <a href="#sair" onclick="window.location.href='./login.html'"><i class="fas fa-sign-out-alt"></i> <span class="link-texto">Sair</span></a>
+            <a href="#configuracoes" onclick="window.location.href='./configuracoes.html'"> 
+                <span class="material-symbols-outlined">settings</span>
+                <span class="link-texto">Configurações</span></a>
+            <a href="#sair" onclick="window.location.href='./login.html'">
+                    <span class="material-symbols-outlined">logout</span>
+                    <span class="link-texto">Sair</span>
+            </a>
             </div>
         </div>
 
@@ -39,13 +62,26 @@
                     <span class="progress-value">25:00</span>
                 </div>
                 <div class="controls">
-                    <button class="btn start" onclick="startTimer()">Iniciar</button>
-                    <button id="pauseButton" class="btn pause" onclick="pauseTimer()">Pausar</button>
-                    <button id="resumeButton" class="btn resume" onclick="resumeTimer()" style="display: none;">Retomar</button>
-                </div>
-                <div class="extra-controls">
-                    <button class="btn add-time" onclick="addTime()">+5</button>
-                    <button class="btn reset" onclick="resetTimer()">Reiniciar</button>
+                    <button id="startButton" class="btn start" onclick="startTimer()">
+                        <span class="material-symbols-rounded">play_arrow</span> 
+                        <!-- Iniciar -->
+                    </button>
+                    <button id="pauseButton" class="btn pause" onclick="pauseTimer()">
+                        <span class="material-symbols-rounded">pause</span>
+                        <!-- Pausar -->
+                    </button>
+                    <button id="resumeButton" class="btn resume" onclick="resumeTimer()" style="display: none;">
+                        <span class="material-symbols-rounded">resume</span>
+                        <!-- Retomar -->
+                    </button>
+                    <button class="btn reset" onclick="resetTimer()">
+                        <span class="material-symbols-rounded">restart_alt</span>
+                        <!-- Reiniciar -->
+                    </button>
+                    <button class="btn add-time" onclick="addTime()">
+                        +5
+                    </button>
+                    
                 </div>
             </div>
         </div>
@@ -65,6 +101,10 @@
         const circularProgressBarNumber = document.querySelector("#circularProgressBar .progress-value");
         const pauseButton = document.querySelector("#pauseButton");
         const resumeButton = document.querySelector("#resumeButton");
+        const startButton = document.querySelector("#startButton");
+        const title = document.querySelector("title");
+
+        pauseButton.style.display = 'none';
 
         function formatNumberInStringMinute(number) {
             const minutes = Math.floor(number / 60);
@@ -74,6 +114,7 @@
 
         function updateDisplay() {
             circularProgressBarNumber.textContent = formatNumberInStringMinute(remainingTime);
+            title.text = formatNumberInStringMinute(remainingTime) + " - Cronômetro";
         }
 
         function startTimer() {
@@ -81,6 +122,9 @@
 
             isRunning = true;
             isPaused = false;
+            startButton.style.display = 'none';
+            pauseButton.style.display = 'unset';
+            resumeButton.style.display = 'none';
 
             timer = setInterval(() => {
                 if (remainingTime <= 0) {
@@ -94,10 +138,6 @@
                     updateDisplay();
                 }
             }, 1000);
-
-            // Mostrar o botão de pausar e ocultar o botão de retomar
-            pauseButton.style.display = 'unset';
-            resumeButton.style.display = 'none';
         }
 
         function pauseTimer() {
@@ -122,8 +162,9 @@
             isPaused = false;
 
             // Mostrar o botão de pausar e ocultar o botão de retomar
-            pauseButton.style.display = 'unset';
+            pauseButton.style.display = 'none';
             resumeButton.style.display = 'none';
+            startButton.style.display = 'unset';
         }
 
         function resetTimer() {
@@ -133,10 +174,8 @@
         }
 
         function addTime() {
-            if (isRunning && !isPaused) {
-                remainingTime += 5 * 60;
-                updateDisplay();
-            }
+            remainingTime += 5 * 60;
+            updateDisplay();
         }
 
         function toggleSidebar() {

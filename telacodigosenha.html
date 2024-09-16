@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="./styles/telacodigosenha.css">
     <title>Código para redefinir senha</title>
 </head>
 <body>
     <div class="container">
         <div class="voltar" onclick="window.location.href='./login.html'">
-            <i class="fas fa-arrow-left"></i>
+            <span class="material-symbols-outlined">arrow_back_ios</span>
         </div>
         <div class="logo">
             <img alt="Logo">
@@ -18,10 +18,10 @@
         <h2>Esqueci a senha</h2>
         <p>Digite o código para a redefinição de senha.</p>
         <div class="form">
-            <input placeholder="Código" id="codigo">
+            <input placeholder="Código" id="codigo" required>
         </div>
         <div class="botao-container">
-            <button class="confirmar" id="confirmar" onclick="window.location.href='./esquecisenha.html'">Confirmar</button>
+            <button class="confirmar" id="confirmar" onclick="window.location.href='./redefinirsenha.html'">Confirmar</button>
         </div>
         <div class="codigo-n">
             <a>Não recebeu um código?</a>

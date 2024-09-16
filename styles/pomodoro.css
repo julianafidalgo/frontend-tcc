@@ -1,30 +1,23 @@
-* {
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
-}
-
-body {
-  display: flex;
-  height: 100vh;
-  font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    overflow-x: hidden; 
+  background-color: #f4f4f4;
+  overflow-x: hidden; 
 }
 
 .icone-menu {
-  font-size: 30px;
   cursor: pointer;
-  padding: 10px;
   background-color: #80c8d8;
-  color: #fff;
   position: fixed;
   z-index: 2;
   top: 15px;
-  left: 7px;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  width: 15px;
 }
 
 .sidebar {
@@ -41,7 +34,7 @@ body {
 }
 
 .sidebar.aberto {
-  width: 250px; 
+  width: 200px; 
 }
 
 .sidebar .logo {
@@ -49,7 +42,7 @@ body {
   align-items: center;
   padding: 10px 15px;
   color: #fff;
-  font-size: 24px;
+  font-size: 12px;
   margin-bottom: 20px;
 }
 
@@ -153,7 +146,7 @@ body {
 
 /* Timer Box */
 .timer-box {
-  background-color: #cfd8d8;
+  background-color: white;
   padding: 40px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -164,7 +157,7 @@ body {
 #circularProgressBar {
   width: 300px;
   height: 200px;
-  background-color: #87aab0;
+  background-color: #ffffff;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -175,84 +168,87 @@ body {
 
 .progress-value {
   font-size: 64px;
-  color: #004D4F;
+  color: #484545;
   font-weight: bold;
 }
 
-/* Controls */
-.controls, .extra-controls, .timer-type-controls {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 15px;
-}
-
 .btn {
-  padding: 10px 20px;
+  padding: 10px;
   border: none;
   border-radius: 5px;
-  font-size: 16px;
   cursor: pointer;
+  font-size: 18px;
+  height: 45px;
 }
 
 .btn.start {
-  background-color: #3cdd5f;
-  color: #666;
+  background-color: #96d78a;
+  color: white;
   transition: background-color 0.3s ease;
 }
 
 .btn.start:hover{
-  background-color: #64ae73;
-  color: #666;
+  background-color: #76b36e;
+  color: white;
 }
 
 .btn.pause {
-  background-color: #dee069;
-  color: #666;
+  background-color: #dfe862;
+  color: white;
   transition: background-color 0.3s ease;
 }
 
-.btn.pause:hover {
-  background-color: #c8c968;
-  color: #666;
+.btn.pause:hover{
+  background-color: #c4cd4a;
+  color: white;
 }
 
 .btn.resume {
-  background-color: #dee069;
-  color: #666;
+  background-color: #8a96d7;
+  color: white;
   transition: background-color 0.3s ease;
 }
 
 .btn.resume:hover {
-  background-color: #c8c968;
-  color: #666;
+  background-color: #7c8bde;
+  color: white;
 }
 
-.btn.add-time, .btn.reset {
-  background-color: #666666;
+.btn.add-time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.btn.reset {
+  background-color: #403f3f;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.btn.add-time {
+  background-color: #71b4f7;
   color: white;
   transition: background-color 0.3s ease;
 }
 
 .btn.add-time:hover {
-  background-color: #474545;
+  background-color: #66a0db;
   color: white;
 }
 
 .btn.reset:hover{
-  background-color: #474545;
+  background-color: #585858;
   color: white;
 }
 
-/* Timer Type Controls */
-.timer-type-controls .btn {
-  background-color: #81b9bf;
-  color: #004D4F;
-}
-
-.timer-type-controls .btn.active {
-  background-color: #004D4F;
-  color: white;
+.controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  height: 40px;
 }
 
 /* User profile icon */
@@ -264,4 +260,20 @@ body {
 
 .icone-perfil img {
   width: 40px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.material-symbols-rounded {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
 }

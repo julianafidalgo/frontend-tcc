@@ -1,31 +1,25 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
     overflow-x: hidden; 
-    text-align: center;
-}
+  }
 
-
-.icone-menu {
-    font-size: 30px;
+  .icone-menu {
     cursor: pointer;
-    padding: 10px;
     background-color: #80c8d8;
-    color: #fff;
     position: fixed;
     z-index: 2;
     top: 15px;
-    left: 7px;
-}
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    width: 15px;
+  }
+
 .sidebar {
     height: 100%;
     width: 60px; 
@@ -40,7 +34,7 @@ body {
 }
 
 .sidebar.aberto {
-    width: 250px; 
+    width: 200px; 
 }
 
 .sidebar .logo {
@@ -48,7 +42,7 @@ body {
     align-items: center;
     padding: 10px 15px;
     color: #fff;
-    font-size: 24px;
+    font-size: 12px;
     margin-bottom: 20px;
 }
 
@@ -103,10 +97,9 @@ body {
 }
   
 .content {
-    flex-grow: 1;
-    padding: 40px;
-    background-color: #f7f7f7;
-    flex: 1;
+    padding: 20px;
+    margin: 0 auto; 
+    max-width: 1000px;
 }
 
 
@@ -123,7 +116,7 @@ h1 {
 }
 
 .create-group a {
-    color: #a6b9b9;
+    color: #575757;
     font-size: 1.2em;
     text-decoration: none;
     margin: 20px 0;
@@ -135,7 +128,7 @@ h1 {
 }
 
 .groups-section h2 {
-    color: #4a7d7e;
+    color: #155967;
     font-size: 1.5em;
     text-align: center;
 }
@@ -148,7 +141,7 @@ h1 {
 }
 
 .group {
-    background-color: #8bb1b1;
+    background-color: #559da8;
     padding: 20px;
     border-radius: 10px;
     color: white;
@@ -157,3 +150,11 @@ h1 {
     cursor: pointer;
     font-size: 1.2em;
 }
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+  }

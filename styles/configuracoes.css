@@ -7,15 +7,17 @@ body {
 }
 
 .icone-menu {
-    font-size: 30px;
     cursor: pointer;
-    padding: 10px;
     background-color: #80c8d8;
-    color: #fff;
     position: fixed;
     z-index: 2;
     top: 15px;
-    left: 7px;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    width: 15px;
 }
 
 .sidebar {
@@ -32,7 +34,7 @@ body {
 }
 
 .sidebar.aberto {
-    width: 250px; 
+    width: 200px; 
 }
 
 .sidebar .logo {
@@ -40,9 +42,9 @@ body {
     align-items: center;
     padding: 10px 15px;
     color: #fff;
-    font-size: 24px;
+    font-size: 12px;
     margin-bottom: 20px;
-}
+  }
 
 .sidebar .logo img {
     width: 40px;
@@ -104,43 +106,40 @@ h1 {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
+    max-width: 430px;
     margin: 0 auto;
 }
 
 .profile-header {
-    text-align: center;
-    margin-bottom: 20px;
     display: flex;
-    flex-direction: column;
-    align-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    text-align: left;
 }
 
 .profile-header .avatar {
-    width: 50px;
-    height: 50px;
+    width: 60px; 
+    height: 60px; 
     border-radius: 50%;
-    margin-right: 20px;
-    float:  left;
+    margin-right: 20px; /* Espaço entre a foto e o título */
 }
 
 .profile-header h2 {
-    text-align: center;
     font-size: 32px;
     color: #155967;
-    margin-bottom: 5px;
+    margin: 0; 
 }
- 
+
 .profile-header p {
     color: #999;
     font-size: 14px;
+    margin-top: 10px; 
 }
 
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-weight: bold;
 }
 
 form input {
@@ -206,7 +205,7 @@ section {
 .delete-account {
     display: block;
     text-align: center;
-    color: #cb8787;
+    color: #b16767;
     margin-top: 10px;
     font-size: 14px;
     text-decoration: none;
@@ -215,3 +214,19 @@ section {
 .delete-account:hover {
     text-decoration: underline;
 }
+
+input::placeholder {
+    color: #999;
+    font-size: 16px;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+  }
+
+  
+

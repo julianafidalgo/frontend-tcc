@@ -29,12 +29,6 @@ body {
     margin-bottom: 15px;
   }
 
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-
   input[type="email"],
   input[type="password"] {
     width: 100%;
@@ -42,6 +36,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 6px;
     box-sizing: border-box;
+    padding: 15px;
   }
 
 .submit{
@@ -83,7 +78,7 @@ body {
   }
 
   .esqueci-senha a {
-    color: #559da8;
+    color:  #80c8d8;
     text-decoration: none;
   }
 
@@ -102,7 +97,7 @@ body {
   }
 
   .criar-conta a {
-    color: #559da8;
+    color: #80c8d8;
     text-decoration: none;
   }
 
@@ -110,3 +105,7 @@ body {
     text-decoration: underline;
   }
 
+input::placeholder {
+    color: #999;
+    font-size: 16px;
+}

@@ -3,28 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="./styles/criargrupo.css">
     <title>Criar Novo Grupo</title>
 </head>
 <body>
-    <div class="icone-menu" onclick="toggleSidebar()">☰</div>
+    <div class="icone-menu" onclick="toggleSidebar()">
+        <span class="material-symbols-outlined">menu</span>
+    </div>
 
     <div class="sidebar" id="sidebar">
         <div class="logo">
             <img src="logo.png" alt="Logo">
             <span class="logo-texto">TAG</span>
         </div>
-        <a href="#grupos" onclick="window.location.href='./grupos.html'"><i class="fas fa-users"></i> <span class="link-texto">Grupos</span></a>
-        <a href="#cronometro" onclick="window.location.href='./pomodoro.html'"><i class="fas fa-clock"></i> <span class="link-texto">Cronômetro</span></a>
-        <a href="#perguntas" onclick="window.location.href='./perguntas.html'"><i class="fas fa-question"></i> <span class="link-texto">Perguntas</span></a>
-        <a href="#todo" onclick="window.location.href='./todo.html'"><i class="fas fa-tasks"></i> <span class="link-texto">To-do</span></a>
-        <a href="#ranking" onclick="window.location.href='./ranking.html'"><i class="fas fa-chart-bar"></i> <span class="link-texto">Ranking</span></a>
-        <a href="#kanban" onclick="window.location.href='./kanban.html'"><i class="fas fa-columns"></i> <span class="link-texto">Kanban</span></a>
+        <a href="#grupos" onclick="window.location.href='./grupos.html'">
+            <span class="material-symbols-outlined">groups</span> 
+            <span class="link-texto">Grupos</span>
+        </a>
+        <a href="#cronometro" onclick="window.location.href='./pomodoro.html'">
+            <span class="material-symbols-outlined">alarm</span> 
+            <span class="link-texto">Cronômetro</span>
+        </a>
+        <a href="#perguntas" onclick="window.location.href='./perguntas.html'">
+            <span class="material-symbols-outlined">design_services</span>
+            <span class="link-texto">Perguntas</span>
+        </a>
+        <a href="#ranking" onclick="window.location.href='./ranking.html'">
+            <span class="material-symbols-outlined">star</span>
+            <span class="link-texto">Ranking</span>
+        </a>
+        <a href="#tarefas" onclick="window.location.href='./tarefas.html'">
+            <span class="material-symbols-outlined">view_kanban</span>
+            <span class="link-texto">Tarefas</span>
+        </a>
 
         <div class="botao-links">
-            <a href="#configuracoes" onclick="window.location.href='./configuracoes.html'"><i class="fas fa-cog"></i> <span class="link-texto">Configurações</span></a>
-            <a href="#sair" onclick="window.location.href='./login.html'"><i class="fas fa-sign-out-alt"></i> <span class="link-texto">Sair</span></a>
+        <a href="#configuracoes" onclick="window.location.href='./configuracoes.html'"> 
+            <span class="material-symbols-outlined">settings</span>
+            <span class="link-texto">Configurações</span></a>
+            
+        <a href="#sair" onclick="window.location.href='./login.html'">
+            <span class="material-symbols-outlined">logout</span>
+            <span class="link-texto">Sair</span>
+        </a>
         </div>
     </div>
 
@@ -34,15 +56,13 @@
 
     <div class="content" id="content">
         <div class="container">
+            <div class="logo">
+                <img alt="Logo">
+              </div>
             <h2 class="titulo-criar-grupo">Criar novo grupo</h2>
             <form>
                 <div class="formulario">
-                    <label for="nome-grupo">Nome do grupo:</label>
-                    <input type="text" id="nome-grupo" name="nome-grupo" required>
-                </div>
-                <div class="convidar-amigo">
-                    <p>Deseja convidar um amigo?</p>
-                    <a href="#" class="link">Copiar link</a>
+                    <input type="text" id="nome-grupo" name="nome-grupo" placeholder="Nome do grupo" required>
                 </div>
                 <div class="form">
                     <button class="criargrupo" id="criar-grupo" type="submit">Criar</button>

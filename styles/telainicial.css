@@ -80,6 +80,7 @@ body {
 label {
     display: block;
     font-size: 18px;
+    color: #575757;
     font-weight: bold;
     margin-bottom: 10px;
 }
@@ -99,7 +100,7 @@ input[type="password"] {
   font-size: 18px;
   text-align: center;
   padding: 12px 24px;
-  color: black;
+  color: #575757;
 }
 
 .text{
@@ -114,7 +115,7 @@ input[type="password"] {
   margin-bottom: 10px;
 }
 .esqueci-senha a {
-    color: #559da8;
+    color: #155967;
     text-decoration: none;
 }
 

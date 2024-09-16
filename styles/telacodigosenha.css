@@ -53,20 +53,12 @@ p {
 .form input {
     width: 80%;
     display: block; 
-    padding: 23px;
-    margin: 0 auto 20px auto; 
+    padding: 20px;
+    margin: 0 auto 5px auto; 
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box; 
     font-size: 16px;
-}
-
-.form label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 16px;
-    color: #333;
-    font-weight: bold;
 }
 
 .botao-container {
@@ -117,3 +109,16 @@ p {
     text-decoration: underline;
     color: #559da8;
 }
+
+input::placeholder {
+    color: #999;
+    font-size: 18px;
+  }
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+  }

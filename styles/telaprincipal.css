@@ -7,15 +7,17 @@ body {
 }
 
 .icone-menu {
-    font-size: 30px;
     cursor: pointer;
-    padding: 10px;
     background-color: #80c8d8;
-    color: #fff;
     position: fixed;
     z-index: 2;
     top: 15px;
-    left: 7px;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    width: 15px;
 }
  
 .titulo {
@@ -55,7 +57,7 @@ body {
 }
 
 .sidebar.aberto {
-    width: 250px; 
+    width: 200px; 
 }
 
 .sidebar .logo {
@@ -63,7 +65,7 @@ body {
     align-items: center;
     padding: 10px 15px;
     color: #fff;
-    font-size: 24px;
+    font-size: 12px;
     margin-bottom: 20px;
 }
 
@@ -121,4 +123,12 @@ body {
     padding: 20px;
     margin: 0 auto; 
     max-width: 1000px; 
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
 }
