@@ -160,6 +160,7 @@ body {
 
 #cancelar {
   background-color: #ccc;
+  transition: background-color 0.3s ease;
 }
 
 #cancelar:hover{

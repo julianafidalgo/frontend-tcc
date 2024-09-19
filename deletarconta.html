@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configurações - Deletar Conta</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="./styles/deletarconta.css">
+    <title>Configurações - Deletar Conta</title>
+    
 </head>
 <body>
         <!--Início Side-bar-->
@@ -64,14 +65,14 @@
             <h1>Configurações</h1>
         <div class="delete-account">
             <h2>Deletar conta</h2>
-            <p><i class="info-icon"></i> Esta ação é irreversível.</p>
+            <p class="p"><span class="material-symbols-outlined info-icon">info</span> Esta ação é irreversível.</p>
             <div class="user-icon">
                 <img src="user-icon.png" alt="Usuário">
             </div>
             <p class="confirmation-text">Você tem certeza que deseja excluir sua conta?</p>
             <div class="actions">
-                <button class="delete-btn">Deletar conta</button>
-                <button class="cancel-btn">Cancelar</button>
+                <button class="delete-btn" onclick="window.location.href='./telainicial.html'">Deletar conta</button>
+                <button class="cancel-btn" onclick="window.location.href='./configuracoes.html'">Cancelar</button>
             </div>
         </div>
     </div>

@@ -20,6 +20,8 @@ p {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
 }
 
 .start-btn:hover {
