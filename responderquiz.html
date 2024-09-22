@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - TAG</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./styles/responderquiz.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo-container">
+                <h1 class="logo">TAG</h1>
+                <div class="icons">
+                    <a href="#grupos" onclick="window.location.href='./grupos.html'">
+                        <span class="material-symbols-outlined">groups</span> 
+                        <span class="link-texto">Grupos</span>
+                    </a>
+                    <a href="#cronometro" onclick="window.location.href='./pomodoro.html'">
+                        <span class="material-symbols-outlined">alarm</span> 
+                        <span class="link-texto">Cronômetro</span>
+                    </a>
+                    </a>
+                    <a href="#ranking" onclick="window.location.href='./ranking.html'">
+                        <span class="material-symbols-outlined">star</span>
+                        <span class="link-texto">Ranking</span>
+                    </a>
+                    <a href="#tarefas" onclick="window.location.href='./tarefas.html'">
+                        <span class="material-symbols-outlined">view_kanban</span>
+                        <span class="link-texto">Tarefas</span>
+                    </a> </div>
+            </div>
+            <ul class="menu">
+                <li><a href="#">Tarefas</a></li>
+                <li><a href="#">Perguntas</a></li>
+                <li><a href="#">Ranking</a></li>
+                <li><a href="#">Membros</a></li>
+                <li><a href="#">Configurações</a></li>
+            </ul>
+            <div class="user" onclick="toggleUserMenu()">
+                <img src="user-icon.png" alt="Ícone de usuário">
+            </div>
+        </div>
+        <div id="user-menu" class="user-menu">
+            <ul>
+                <li><a href="#">Configurações</a></li>
+                <li><a href="#">Sair</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <div class="quiz-container">
+            <h2>Quiz</h2>
+            <h3 id="group-name">{nome grupo}</h3>
+
+            <div class="question">
+                <p id="qtd-perguntas"><strong>Questão {questão atual} de {num total de questoes}</strong></p>
+                <p id="materia"><strong>{matéria}</strong></p>
+                <p id="pergunta">{Pergunta}</p>
+
+                <form>
+                    <label>
+                        <input type="radio" name="question" value="1" id="alternativa1">
+                        {alternativa1}
+                    </label><br>
+
+                    <label>
+                        <input type="radio" name="question" value="2" id="alternativa2">
+                        {alternativa2}
+                    </label><br>
+
+                    <label>
+                        <input type="radio" name="question" value="3" id="alternativa3">
+                        {alternativa3}
+                    </label><br>
+
+                    <label>
+                        <input type="radio" name="question" value="4" id="alternativa4">
+                        {alternativa3}
+                    </label><br>
+
+                    <div class="buttons">
+                        <button type="button" class="btn-back">Voltar</button>
+                        <button type="submit" class="btn-next">Avançar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script>
+        function toggleUserMenu() {
+            var menu = document.getElementById('user-menu');
+            menu.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>

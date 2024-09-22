@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado - TAG</title>
+    <link rel="stylesheet" href="./styles/pontuacaoquiz.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo-container">
+                <h1 class="logo">TAG</h1>
+                <div class="icons">
+                    <div class="icon"><img src="groups-icon.png" alt="Grupos"> Grupos</div>
+                    <div class="icon"><img src="timer-icon.png" alt="Cronômetro"> Cronômetro</div>
+                    <div class="icon"><img src="tasks-icon.png" alt="Tarefas"> Tarefas</div>
+                    <div class="icon"><img src="ranking-icon.png" alt="Ranking"> Ranking</div>
+                </div>
+            </div>
+            <ul class="menu">
+                <li><a href="#">Tarefas</a></li>
+                <li><a href="#">Perguntas</a></li>
+                <li><a href="#">Ranking</a></li>
+                <li><a href="#">Membros</a></li>
+                <li><a href="#">Configurações</a></li>
+            </ul>
+            <div class="user" onclick="toggleUserMenu()">
+                <img src="user-icon.png" alt="Ícone de usuário">
+            </div>
+        </div>
+        <div id="user-menu" class="user-menu">
+            <ul>
+                <li><a href="#">Configurações</a></li>
+                <li><a href="#">Sair</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <div class="result-container">
+            <h2>{nome grupo}</h2>
+
+            <div class="result">
+                <h3 id="msg-acertos">Parabéns!</h3>
+                <p id="perguntas-acertadas">Você acertou {qtd perguntas acertadas} de {total perguntas} questões!</p>
+
+                <div class="user-info">
+                    <img src="user-placeholder.png" alt="Avatar" id="avatar">
+                    <p class="user-name" id="user-name">{Nome do usuário}</p>
+                    <p class="score" id="pontuacao">{pontuacao}</p>
+                </div>
+
+                <button type="button" class="btn-finish">Finalizar</button>
+            </div>
+        </div>
+    </main>
+    <script>
+        function toggleUserMenu() {
+            var menu = document.getElementById('user-menu');
+            menu.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
