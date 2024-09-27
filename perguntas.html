@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Pergunta</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="./styles/quiz.css">
-    <title>Quiz</title>
-    
+    <link rel="stylesheet" href="./styles/perguntas.css">
 </head>
 <body>
     <header>
@@ -53,35 +52,55 @@
         <li><a href="#">Configurações</a></li>
     </ul>
     </header>
-    <script>
-        function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('aberto');
-        }
-    </script>
+    <main>
+        <h2>{nome do grupo}</h2>
+        <section class="form-section">
+            <h2>Criar Pergunta</h2>
+            <p>Crie sua pergunta personalizada!</p>
+            
+            <form>
+                <label for="question">Questão</label>
+                <input type="text" id="question" placeholder="Crie uma questão sobre o conteúdo estudado...">
+                
+                <label>Selecione a alternativa correta</label>
+                <div id="alternativas">
+                    <label>
+                    <input type="radio" name = "certa">
+                    <input type="text" class="alternativa" placeholder="Crie a resposta sobre a questão...">
+                    </label>
+                </div>
+                <a href="#" class="more-alternatives" id = 'mais-alts'>+ Mais alternativas</a>
 
-    <div class="content">
-            <h1>Quiz</h1>
-            <div class="user-icon">
-                <!--<img src="user-icon.png" alt="Usuário">-->
-            </div>
-            <div class="quiz-content">
-                <h2 id="group-name">{nome grupo}</h2>
-                <p>Você está prestes a iniciar o quiz!</p>
-                <p id="question-count">Este quiz contém X questões</p>
-                <button class="start-btn">Iniciar</button>
-            </div>
-    </div>
-    <!--Modelo para fazer requisição na API-->
-    <!--<script>
-        // Faz uma requisição à API para obter os dados do quiz
-        fetch('/api/quiz/1')  // Você pode passar o ID do grupo aqui
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('group-name').innerText = data.GroupName;
-                document.getElementById('question-count').innerText = `Este quiz contém ${data.QuestionCount} questões`;
-            })
-            .catch(error => console.error('Erro ao carregar os dados:', error));
-    </script>-->
+                <div class="buttons">
+                    <button type="button" class="cancel-btn">Cancelar</button>
+                    <button type="submit" class="save-btn">Criar mais uma pergunta</button>
+                    <button type="submit" class="save-btn">Finalizar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <script>
+        function toggleUserMenu() {
+            var menu = document.getElementById('user-menu');
+            menu.classList.toggle('show');
+        }
+        
+        document.getElementById('mais-alts').addEventListener('click', function(e) {
+    e.preventDefault(); // Evita o comportamento padrão do link
+
+    // Encontra o container onde as alternativas estão sendo exibidas
+    const alternativesContainer = document.getElementById('alternativas');
+
+    // Conta quantas alternativas já existem para dar um novo nome único aos inputs
+    const totalAlternatives = alternativesContainer.querySelectorAll('label').length + 1;
+
+    // Cria um novo elemento de label e input
+    const newAlternative = document.createElement('label');
+    newAlternative.innerHTML = `<input type="radio" name = "certa"> <input type="text" class="alternativa" placeholder="Crie a resposta sobre a questão...">`;
+
+    // Adiciona a nova alternativa ao container
+    alternativesContainer.appendChild(newAlternative);
+});
+    </script>
 </body>
 </html>

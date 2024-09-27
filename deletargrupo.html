@@ -12,7 +12,7 @@
     <header>
         <div class="navbar">
             <div class="logo-container">
-                <h1 class="logo">TAG</h1>
+                <h1 class="logo">UniFocus</h1>
                 <div class="icons">
                     <a href="#grupos" onclick="window.location.href='./grupos.html'">
                         <span class="material-symbols-outlined">groups</span> 
@@ -32,23 +32,26 @@
                         <span class="link-texto">Tarefas</span>
                     </a> </div>
             </div>
-            <ul class="menu">
-                <li><a href="#">Tarefas</a></li>
-                <li><a href="#">Perguntas</a></li>
-                <li><a href="#">Ranking</a></li>
-                <li><a href="#">Membros</a></li>
-                <li><a href="#">Configurações</a></li>
-            </ul>
-            <div class="user" onclick="toggleUserMenu()">
-                <img src="user-icon.png" alt="Ícone de usuário">
-            </div>
-        </div>
+            
         <div id="user-menu" class="user-menu">
             <ul>
-                <li><a href="#">Configurações</a></li>
-                <li><a href="#">Sair</a></li>
+                <li><a href="#configuracoes" onclick="window.location.href='./configuracoes.html'">Configurações</a></li>
+                <li><a href="#telainicial" onclick="window.location.href='./telainicial.html'">Sair</a></li>
             </ul>
         </div>
+       
+        <div class="user" onclick="toggleUserMenu()">
+            <img src="user-icon.png" alt="Ícone de usuário">
+        </div>
+    </div>
+
+    <ul class="menu">
+        <li><a href="#">Tarefas</a></li>
+        <li><a href="#">Perguntas</a></li>
+        <li><a href="#">Ranking</a></li>
+        <li><a href="#">Membros</a></li>
+        <li><a href="#">Configurações</a></li>
+    </ul>
     </header>
         <script>
             function toggleSidebar() {

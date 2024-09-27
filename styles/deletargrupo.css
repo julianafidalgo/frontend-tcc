@@ -12,12 +12,14 @@ body {
 
 /*Início da header/topbar/navbar*/
 .navbar {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #155967;
     padding: 1rem 2rem;
     color: white;
+    flex-direction: row;
 }
 
 .logo-container {
@@ -47,6 +49,7 @@ body {
 }
 
 .menu {
+    width: 100%;
     list-style: none;
     display: flex;
     gap: 1rem;
@@ -73,7 +76,7 @@ body {
 
 .user-menu {
     display: none;
-    position: absolute;
+    position: fixed;
     right: 2rem;
     top: 4rem;
     background-color: #e0e0e0;
@@ -110,7 +113,6 @@ a {
 }
 
 /*Fim da navbar*/
-
 .content {
     padding: 40px;
     background-color: #f7f7f7;

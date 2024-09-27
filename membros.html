@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membros</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="./styles/quiz.css">
-    <title>Quiz</title>
-    
+    <link rel="stylesheet" href="./styles/membros.css">
 </head>
 <body>
     <header>
@@ -53,35 +52,40 @@
         <li><a href="#">Configurações</a></li>
     </ul>
     </header>
-    <script>
-        function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('aberto');
-        }
-    </script>
 
-    <div class="content">
-            <h1>Quiz</h1>
-            <div class="user-icon">
-                <!--<img src="user-icon.png" alt="Usuário">-->
-            </div>
-            <div class="quiz-content">
-                <h2 id="group-name">{nome grupo}</h2>
-                <p>Você está prestes a iniciar o quiz!</p>
-                <p id="question-count">Este quiz contém X questões</p>
-                <button class="start-btn">Iniciar</button>
-            </div>
-    </div>
-    <!--Modelo para fazer requisição na API-->
-    <!--<script>
-        // Faz uma requisição à API para obter os dados do quiz
-        fetch('/api/quiz/1')  // Você pode passar o ID do grupo aqui
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('group-name').innerText = data.GroupName;
-                document.getElementById('question-count').innerText = `Este quiz contém ${data.QuestionCount} questões`;
-            })
-            .catch(error => console.error('Erro ao carregar os dados:', error));
-    </script>-->
+
+    <main>
+        <h2>Membros - {nome do grupo}</h2>
+        <section class="members-section">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Função</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#">{nome usua propri}</a></td>
+                        <td>Proprietário</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">{membro}</a></td>
+                        <td>Membro</td>
+                        <td><a class="material-symbols-outlined" id="excluir">
+                            delete_forever
+                            </a></td>
+                    </tr>
+    </main>
+
+    <script>
+        function toggleUserMenu() {
+            var menu = document.getElementById('user-menu');
+            menu.classList.toggle('show');
+        }
+        
+    </script>
 </body>
 </html>
