@@ -8,11 +8,7 @@
     <title>Tela Principal</title>
 </head>
 <body>
-    <div class="icone-menu" onclick="toggleSidebar()">
-        <span class="material-symbols-outlined">menu</span>
-    </div>
-
-    <div class="sidebar" id="sidebar">
+    <div class="topnav" id="topnav">
         <div class="logo">
             <img src="logo.png" alt="Logo">
             <span class="logo-texto">TAG</span>
@@ -37,26 +33,24 @@
             <span class="material-symbols-outlined">view_kanban</span>
             <span class="link-texto">Tarefas</span>
         </a>
-
-        <div class="botao-links">
-        <a href="#configuracoes" onclick="window.location.href='./configuracoes.html'"> 
-            <span class="material-symbols-outlined">settings</span>
-            <span class="link-texto">Configurações</span></a>
-        <a href="#sair" onclick="window.location.href='./login.html'">
-                <span class="material-symbols-outlined">logout</span>
-                <span class="link-texto">Sair</span>
-        </a>
-        </div>
     </div>
-    <div class="icone-perfil">
+    <div class="icone-perfil" onclick="toggleMenu()">
         <img src="icons/user.png" alt="Usuário">
+        <span class="material-symbols-outlined icone-seta">arrow_drop_up</span>
+    </div>
+    <div class="menu-usuario" id="menuUsuario">
+        <a href="#configuracoes" onclick="window.location.href='./configuracoes.html'">Configurações 
+            <span class="material-symbols-outlined">settings</span>
+        </a>
+        <a href="#sair" onclick="window.location.href='./login.html'">Sair
+            <span class="material-symbols-outlined">logout</span> 
+        </a>
     </div>
 
     <div class="content" id="content">
         <h1 class="titulo">Olá, {usuário}!</h1>
     </div>
-    <p class="texto-inicial"><strong>Pronto para começar?</strong>
-    </p>
+    <p class="texto-inicial"><strong>Pronto para começar?</strong></p>
     <p class="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
@@ -68,9 +62,17 @@
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     <script>
-        function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('aberto');
+        function toggleMenu() {
+            const menuUsuario = document.getElementById('menuUsuario');
+            const iconeSeta = document.querySelector('.icone-seta');
+            menuUsuario.classList.toggle('mostrar');
+            
+            // Alterna entre as setas 'arrow_drop_up' e 'arrow_drop_down'
+            if (menuUsuario.classList.contains('mostrar')) {
+                iconeSeta.textContent = 'arrow_drop_down';
+            } else {
+                iconeSeta.textContent = 'arrow_drop_up';
+            }
         }
     </script>
 </body>

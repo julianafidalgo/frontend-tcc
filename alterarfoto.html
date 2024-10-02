@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./styles/alterarfoto.css">
+    <title>Configurações - Alterar foto</title>
+</head>
+<body>
+    <div class="icone-menu" onclick="toggleSidebar()">
+        <span class="material-symbols-outlined">menu</span>
+    </div>
+
+    <div class="sidebar" id="sidebar">
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+            <span class="logo-texto">TAG</span>
+        </div>
+        <a href="#grupos" onclick="window.location.href='./grupos.html'">
+            <span class="material-symbols-outlined">groups</span> 
+            <span class="link-texto">Grupos</span>
+        </a>
+        <a href="#cronometro" onclick="window.location.href='./pomodoro.html'">
+            <span class="material-symbols-outlined">alarm</span> 
+            <span class="link-texto">Cronômetro</span>
+        </a>
+        <a href="#perguntas" onclick="window.location.href='./perguntas.html'">
+            <span class="material-symbols-outlined">design_services</span>
+            <span class="link-texto">Perguntas</span>
+        </a>
+        <a href="#ranking" onclick="window.location.href='./ranking.html'">
+            <span class="material-symbols-outlined">star</span>
+            <span class="link-texto">Ranking</span>
+        </a>
+        <a href="#tarefas" onclick="window.location.href='./tarefas.html'">
+            <span class="material-symbols-outlined">view_kanban</span>
+            <span class="link-texto">Tarefas</span>
+        </a>
+
+        <div class="botao-links">
+            <a href="#configuracoes" onclick="window.location.href='./configuracoes.html'"> 
+                <span class="material-symbols-outlined">settings</span>
+                <span class="link-texto">Configurações</span>
+            </a>
+            <a href="#sair" onclick="window.location.href='./login.html'">
+                <span class="material-symbols-outlined">logout</span>
+                <span class="link-texto">Sair</span>
+            </a>
+        </div>
+    </div>
+    
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('aberto');
+        }
+    </script>
+    
+    <div class="content">
+        <h1>Configurações</h1>
+        <div class="profile-box">
+            <div class="profile-header">
+                <div id="edit">
+                    <h2>Alterar foto de perfil</h2>
+                    <p>Altere sua foto de perfil apertando no ícone.</p>
+                </div>
+                <img src="https://thewestnews.com/wp-content/uploads/2024/10/Fortnitemares-2024.jpg" alt="Foto de perfil" class="avatar">
+                <span class="material-symbols-outlined camera-icon">photo_camera</span>
+            </div>
+            <button type="submit" class="confirm-btn">Alterar foto</button>
+            <button type="button" class="cancel-btn">Cancelar</button>
+        </div>
+    </div>
+</body>
+</html>

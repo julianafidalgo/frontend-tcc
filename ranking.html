@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./styles/ranking.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo-container">
+                <h1 class="logo">TAG</h1>
+                <div class="icons">
+                    <a href="#grupos" onclick="window.location.href='./grupos.html'">
+                        <span class="material-symbols-outlined">groups</span> 
+                        <span class="link-texto">Grupos</span>
+                    </a>
+                    <a href="#cronometro" onclick="window.location.href='./pomodoro.html'">
+                        <span class="material-symbols-outlined">alarm</span> 
+                        <span class="link-texto">Cronômetro</span>
+                    </a>
+                    <a href="#ranking" onclick="window.location.href='./ranking.html'">
+                        <span class="material-symbols-outlined">star</span>
+                        <span class="link-texto">Ranking</span>
+                    </a>
+                    <a href="#tarefas" onclick="window.location.href='./tarefas.html'">
+                        <span class="material-symbols-outlined">view_kanban</span>
+                        <span class="link-texto">Tarefas</span>
+                    </a>
+                </div>
+            </div>
+            <ul class="menu">
+                <li><a href="#">Tarefas</a></li>
+                <li><a href="#">Perguntas</a></li>
+                <li><a href="#">Ranking</a></li>
+                <li><a href="#">Membros</a></li>
+                <li><a href="#">Configurações</a></li>
+            </ul>
+            <div class="user" onclick="toggleUserMenu()">
+                <img src="" alt="Ícone de usuário">
+            </div>
+        </div>
+        <div id="user-menu" class="user-menu">
+            <ul>
+                <li><a href="#">Configurações</a></li>
+                <li><a href="#">Sair</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <div class="ranking-container">
+            <h1>Ranking</h1>
+            <div class="top-3">
+                <div class="rank">
+                    <span class="medalha prata">🥈</span>
+                    <p>Charlie Fidalgo</p>
+                    <img src="https://i.pinimg.com/736x/5d/3f/26/5d3f26d4ee1e3aaf9b002f98050dd1ae.jpg" alt="Charlie Fidalgo" class="foto-perfil">
+                    <p>400</p>
+                </div>
+                <div class="rank">
+                    <span class="medalha ouro">👑</span>
+                    <p>Juliana Fidalgo</p>
+                    <img src="https://i.pinimg.com/736x/5d/3f/26/5d3f26d4ee1e3aaf9b002f98050dd1ae.jpg" alt="Juliana Fidalgo" class="foto-perfil">
+                    <p>500</p>
+                </div>
+                <div class="rank">
+                    <span class="medalha bronze">🥉</span>
+                    <p>Luna Fidalgo</p>
+                    <img src="https://i.pinimg.com/736x/5d/3f/26/5d3f26d4ee1e3aaf9b002f98050dd1ae.jpg" alt="Luna Fidalgo" class="foto-perfil">
+                    <p>300</p>
+                </div>
+            </div>
+
+            <div class="rank-lista-container">
+                <ul class="rank-lista">
+                    <li><img src="https://i.pinimg.com/736x/5d/3f/26/5d3f26d4ee1e3aaf9b002f98050dd1ae.jpg" alt="usuário" class="foto-perfil-small"> Membro - 200</li>
+                    <li><img src="https://i.pinimg.com/736x/5d/3f/26/5d3f26d4ee1e3aaf9b002f98050dd1ae.jpg" alt="usuário" class="foto-perfil-small"> Membro - 100</li>
+                    <li><img src="https://i.pinimg.com/736x/5d/3f/26/5d3f26d4ee1e3aaf9b002f98050dd1ae.jpg" alt="usuário" class="foto-perfil-small"> Membro - 90</li>
+                    <li><img src="https://i.pinimg.com/736x/5d/3f/26/5d3f26d4ee1e3aaf9b002f98050dd1ae.jpg" alt="usuário" class="foto-perfil-small"> Membro - 90</li>
+                    <li><img src="https://i.pinimg.com/736x/5d/3f/26/5d3f26d4ee1e3aaf9b002f98050dd1ae.jpg" alt="usuário" class="foto-perfil-small"> Membro - 90</li>
+                    <li><img src="https://i.pinimg.com/736x/5d/3f/26/5d3f26d4ee1e3aaf9b002f98050dd1ae.jpg" alt="usuário" class="foto-perfil-small"> Membro - 90</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function toggleUserMenu() {
+            var menu = document.getElementById('user-menu');
+            menu.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>

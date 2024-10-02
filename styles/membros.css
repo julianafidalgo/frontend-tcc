@@ -1,0 +1,216 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #155967;
+    padding: 1rem 2rem;
+    color: white;
+    flex-direction: row;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    margin-right: 2rem;
+}
+
+.icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.menu {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    background-color: #e0e0e0;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.menu li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.user {
+    cursor: pointer;
+}
+
+.user img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.user-menu {
+    display: none;
+    position: fixed;
+    right: 2rem;
+    top: 4rem;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-menu ul {
+    list-style: none;
+    padding: 1rem;
+}
+
+.user-menu ul li {
+    margin-bottom: 1rem;
+}
+
+.user-menu ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.show {
+    display: block;
+}
+
+#excluir {
+    color: #999999;
+    cursor: pointer;
+}
+
+main {
+    text-align: center;
+    margin: 20px;
+}
+
+h2 {
+    margin: 20px 0;
+    color: #1d7d83;
+}
+
+.members-section {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    width: 50%;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    max-height: 400px; 
+}
+
+/* Scroll */
+.members-section::-webkit-scrollbar {
+    width: 8px;
+}
+
+.members-section::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+}
+
+.members-section::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #1d7d83;
+    font-size: 18px;
+}
+
+td a {
+    color: #1d7d83;
+    text-decoration: none;
+}
+
+/*Modal*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 400px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-title {
+    color: #1d7d83; 
+    margin-bottom: 15px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.modal-message{
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between; 
+    margin-top: 20px;
+}
+
+button {
+    background-color: #1d7d83;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #155967; 
+}
