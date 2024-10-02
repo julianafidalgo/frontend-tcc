@@ -6,66 +6,20 @@ body {
     overflow-x: hidden; 
 }
 
-.icone-perfil {
-    position: absolute;
-    top: 15px;
-    right: 20px;
+.icone-menu {
     cursor: pointer;
+    background-color: #80c8d8;
+    position: fixed;
+    z-index: 2;
+    top: 15px;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #fff;
     display: flex;
     align-items: center;
+    width: 15px;
 }
-
-.icone-perfil img {
-    width: 40px; 
-    height: 40px; 
-    border-radius: 50%;
-}
-
-.icone-seta {
-    margin-left: 10px;
-    font-size: 24px; 
-}
-
-.menu-usuario {
-    display: none;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    z-index: 3;
-    width: 150px;
-}
-
-.menu-usuario a {
-    display: flex;
-    justify-content: start; /* Alinha os itens no início */
-    align-items: center; /* Alinha verticalmente o ícone e o texto */
-    padding: 10px;
-    color: #155967;
-    text-decoration: none;
-    text-align: left; /* Garante que o texto comece à esquerda */
-    border-bottom: 1px solid #ddd;
-}
-
-.menu-usuario a .material-symbols-outlined {
-    margin-right: 10px; /* Espaço entre o ícone e o texto */
-}
-
-.menu-usuario a:last-child {
-    border-bottom: none;
-}
-
-.menu-usuario a:hover {
-    background-color: #f4f4f4;
-}
-
-.menu-usuario.mostrar {
-    display: block;
-}
-
+ 
 .titulo {
     text-align: center;
     color: #155967;
@@ -89,6 +43,81 @@ body {
     max-width: 800px; 
     padding: 20px; 
 }
+.sidebar {
+    height: 100%;
+    width: 60px; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #80c8d8;
+    overflow-x: hidden;
+    transition: width 0.3s;
+    padding-top: 20px;
+    z-index: 1;
+}
+
+.sidebar.aberto {
+    width: 200px; 
+}
+
+.sidebar .logo {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    color: #fff;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.sidebar .logo img {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.sidebar .logo .logo-texto {
+    display: none; 
+}
+
+.sidebar.aberto .logo .logo-texto {
+    display: inline; 
+}
+
+.sidebar a {
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.sidebar a .link-texto {
+    display: none; 
+}
+
+.sidebar.aberto a .link-texto {
+    display: inline; 
+    margin-left: 10px;
+}
+
+.sidebar a:hover {
+    background-color: #559da8;
+}
+
+.sidebar .botao-links {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+}
+
+.icone-perfil {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+  
 
 .content {
     padding: 20px;

@@ -154,7 +154,7 @@ td a {
     text-decoration: none;
 }
 
-/*Modal*/
+/* Estilos da Modal */
 .modal {
     display: none;
     position: fixed;
@@ -180,12 +180,6 @@ td a {
 .modal-title {
     color: #1d7d83; 
     margin-bottom: 15px;
-    font-size: 25px;
-    text-align: center;
-}
-
-.modal-message{
-    text-align: center;
 }
 
 .close {
