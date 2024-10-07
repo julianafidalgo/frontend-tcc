@@ -172,14 +172,9 @@ td a {
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 400px; 
-    border-radius: 8px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.modal-title {
-    color: #1d7d83; 
-    margin-bottom: 15px;
+    width: 30%;
+    border-radius: 8px;
+    text-align: center; /* Centraliza o texto dentro da modal */
 }
 
 .close {
@@ -192,19 +187,99 @@ td a {
 
 .modal-buttons {
     display: flex;
-    justify-content: space-between; 
+    flex-direction: column; /* Alinha os botões em coluna */
+    align-items: center; /* Centraliza os botões */
     margin-top: 20px;
 }
 
-button {
-    background-color: #1d7d83;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+.modal-button {
+    width: 100%; /* Garante que os botões ocupem a largura completa */
+    max-width: 150px; /* Limita a largura máxima dos botões */
+    margin: 5px 0; /* Adiciona espaço entre os botões */
+    padding: 10px; /* Padding para os botões */
+    border: none; /* Remove borda */
+    border-radius: 5px; /* Arredonda os cantos */
+    cursor: pointer; /* Muda o cursor para pointer */
+    transition: background-color 0.3s; /* Transição para o efeito hover */
 }
 
-button:hover {
-    background-color: #155967; 
+.modal-button:nth-child(1) {
+    background-color: #d9534f; /* Cor do botão Excluir */
+    color: #fff; /* Texto branco */
 }
+
+.modal-button:nth-child(2) {
+    background-color: #ccc; /* Cor do botão Cancelar */
+}
+
+
+.nome-grupo, .invite{
+    text-align: center;
+    color: #155967;
+}
+
+.invite-send{
+    width: 150px;
+    background-color: #80c8d8;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s
+}
+
+.invite-send:hover{
+    background-color: #559da8;
+}
+
+.invite-link{
+    color: #155967;
+    font-size: 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+
+.invite-container {
+    position: absolute; /* Para que possamos posicioná-lo */
+    top: 100px; /* Distância do topo */
+    right: 20px; /* Distância da direita */
+}
+
+#inviteButton {
+    background-color: #D1D1D1; 
+    border: none; 
+    padding: 10px; 
+    border-radius: 5px;
+    cursor: pointer; 
+    transition: background-color 0.3s
+}
+
+#inviteButton:hover{
+    background-color: #b6b6b6;
+}
+
+.texto, .or {
+    text-align: center;
+    padding: 10px;
+}
+
+#Email {
+    width: 100%; 
+    max-width: 300px; 
+    margin: 10px 0; 
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+hr {
+    border: none; /* Remove a borda da linha */
+    height: 0; /* Define a altura da linha como 0 */
+}
+

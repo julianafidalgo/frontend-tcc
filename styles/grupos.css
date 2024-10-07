@@ -163,6 +163,39 @@ h1 {
     color: white;
 }
 
+.titulo-novo-grupo{
+    color: #155967;
+    text-align: center;
+}
+
+#groupName{
+    width: 100%; 
+    max-width: 250px; 
+    margin: 10px 0; 
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+#criar{
+    background-color: #80c8d8; 
+    color: white;
+    font-size: 18px;
+    border: none;  
+    border-radius: 5px;
+    cursor: pointer; 
+    transition: background-color 0.3s;
+    width: 150px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    
+}
+
+#criar:hover{
+    background-color: #559da8;
+}
+
 .material-symbols-outlined {
     font-variation-settings:
     'FILL' 0,

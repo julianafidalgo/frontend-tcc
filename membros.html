@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Membros</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="./styles/membros.css">
+    <title>Membros</title>
+   
 </head>
 <body>
     <header>
@@ -51,6 +52,12 @@
             <li><a href="#">Membros</a></li>
             <li><a href="#">Configurações</a></li>
         </ul>
+
+        <div class="invite-container">
+            <button id="inviteButton" onclick="showInviteModal()">
+                <span class="material-symbols-outlined">person_add</span>
+            </button>
+        </div>
     </header>
 
     <main>
@@ -61,7 +68,7 @@
                     <tr>
                         <th>Nome</th>
                         <th>Função</th>
-                        <th></th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -89,48 +96,70 @@
             </table>
         </section>
     </main>
-    <div id="modal" class="modal">
+
+    <div id="deleteModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <h3 class="modal-title">Excluir Membro</h3>
-            <p id="modal-message">Tem certeza que deseja excluir {membro}? Este membro não participará mais do grupo.</p>
+            <h2 class="modal-title">Confirmação de Exclusão</h2>
+            <p>Tem certeza de que deseja remover <span id="memberName"></span> do grupo?</p>
             <div class="modal-buttons">
-                <button id="confirm-delete" onclick="confirmDelete()">Confirmar</button>
-                <button onclick="closeModal()">Cancelar</button>
+                <button class="modal-button" onclick="confirmDelete()">Excluir</button>
+                <button class="modal-button" onclick="closeModal()">Cancelar</button>
             </div>
+        </div>
+    </div>
+    
+
+    <div id="inviteModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeInviteModal()">&times;</span>
+            <h2 class="nome-grupo">Fatecanos</h2>
+            <h3 class="invite">Convite</h3>
+            <p class="texto">Digite o e-mail da pessoa para enviarmos um link de convite para o seu grupo.</p>
+            <input id="Email" type="email" placeholder="E-mail" required>
+            <button onclick="sendInvite()" class="invite-send">Enviar convite</button>
+            <hr>
+            <p class="or">OU</p>
+            <a href="#" type="button" onclick="copyLink()" class="invite-link">Copiar link</a>
         </div>
     </div>
 
     <script>
-        let currentMember = '';
+        const userMenu = document.getElementById("user-menu");
 
         function toggleUserMenu() {
-            const userMenu = document.getElementById('user-menu');
-            userMenu.classList.toggle('show');
+            userMenu.classList.toggle("show");
         }
 
         function showModal(memberName) {
-            currentMember = memberName;
-            document.getElementById('modal-message').innerText = `Tem certeza que deseja excluir ${memberName}? Este membro não participará mais do grupo.`;
-            document.getElementById('modal').style.display = 'block';
+            document.getElementById("memberName").textContent = memberName;
+            document.getElementById("deleteModal").style.display = "block";
         }
 
         function closeModal() {
-            document.getElementById('modal').style.display = 'none';
+            document.getElementById("deleteModal").style.display = "none";
         }
 
         function confirmDelete() {
-            // Aqui você pode adicionar a lógica para excluir o membro
-            console.log(`Membro ${currentMember} excluído!`);
+            alert('O membro foi removido com sucesso!');
             closeModal();
         }
 
-        // Fechar a modal ao clicar fora dela
-        window.onclick = function(event) {
-            const modal = document.getElementById('modal');
-            if (event.target === modal) {
-                closeModal();
-            }
+        function showInviteModal() {
+            document.getElementById("inviteModal").style.display = "block";
+        }
+
+        function closeInviteModal() {
+            document.getElementById("inviteModal").style.display = "none";
+        }
+
+        function sendInvite() {
+            alert('Convite enviado com sucesso!');
+            closeInviteModal();
+        }
+
+        function copyLink() {
+            alert('Link copiado!');
         }
     </script>
 </body>
