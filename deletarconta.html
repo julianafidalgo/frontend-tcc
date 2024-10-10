@@ -35,23 +35,29 @@
             
         <div id="user-menu" class="user-menu">
             <ul>
-                <li><a href="#configuracoes" onclick="window.location.href='./configuracoes.html'">Configurações</a></li>
-                <li><a href="#telainicial" onclick="window.location.href='./telainicial.html'">Sair</a></li>
+                <li><a href="#configuracoes" onclick="window.location.href='./configuracoes.html'">Configurações 
+                    <span class="material-symbols-outlined">settings</span>
+                </a></li>
+                
+                <li><a href="#sair" onclick="window.location.href='./login.html'">Sair
+            <span class="material-symbols-outlined">logout</span> 
+        </a></li>
             </ul>
         </div>
        
         <div class="user" onclick="toggleUserMenu()">
-            <img src="user-icon.png" alt="Ícone de usuário">
+            <img src="https://i.pinimg.com/736x/14/4a/77/144a77448696e1047ba242c12aa522f0.jpg" alt="Ícone de usuário">
         </div>
     </div>
 
+    <ul class="menu">
+        <li><a href="#">Tarefas</a></li>
+        <li><a href="#">Perguntas</a></li>
+        <li><a href="#">Ranking</a></li>
+        <li><a href="#">Membros</a></li>
+        <li><a href="#">Configurações</a></li>
+    </ul>
     </header>
-        <script>
-            function toggleSidebar() {
-                const sidebar = document.getElementById('sidebar');
-                sidebar.classList.toggle('aberto');
-            }
-        </script>
         <!--Fim Side-bar-->
     <div class="content">
             <h2>Configurações</h1>
@@ -68,5 +74,11 @@
             </div>
         </div>
     </div>
+    <script>
+        function toggleUserMenu() {
+            var menu = document.getElementById('user-menu');
+            menu.classList.toggle('show');
+        }
+    </script>
 </body>
 </html>

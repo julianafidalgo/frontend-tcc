@@ -1,125 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
     overflow-x: hidden; 
-    text-align: center;
-  }
- 
-  .icone-menu {
-    cursor: pointer;
-    background-color: #80c8d8;
-    position: fixed;
-    z-index: 2;
-    top: 15px;
-    padding: 15px 20px;
-    text-decoration: none;
-    color: #fff;
+}
+/*Início da header/topbar/navbar*/
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #155967;
+    padding: 1rem 2rem;
+    color: white;
+    flex-direction: row;
+}
+
+.logo-container {
     display: flex;
     align-items: center;
-    width: 15px;
-  }
-
-.sidebar {
-    height: 100%;
-    width: 60px; 
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #80c8d8;
-    overflow-x: hidden;
-    transition: width 0.3s;
-    padding-top: 20px;
-    z-index: 1;
 }
 
-.sidebar.aberto {
-    width: 200px; 
+.logo {
+    font-size: 1.5rem;
+    margin-right: 2rem;
 }
 
-.sidebar .logo {
+.icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.icon {
     display: flex;
     align-items: center;
-    padding: 10px 15px;
-    color: #fff;
-    font-size: 12px;
-    margin-bottom: 20px;
+    gap: 0.5rem;
 }
 
-.sidebar .logo img {
+.icon img {
     width: 40px;
-    height: auto;
-    margin-right: 10px;
+    height: 40px;
 }
 
-.sidebar .logo .logo-texto {
-    display: none; 
+.menu {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    background-color: #e0e0e0;
+    padding: 0.5rem;
+    color: #333;
 }
 
-.sidebar.aberto .logo .logo-texto {
-    display: inline; 
-}
-
-.sidebar a {
-    padding: 15px 20px;
+.menu li a {
+    display: flex; 
+    align-items: center; 
+    padding: 0.2rem 0.4rem; 
     text-decoration: none;
-    font-size: 18px;
+    color: #333;
+    transition: background-color 0.3s; 
+}
+
+.user {
+    cursor: pointer;
+}
+
+.user img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.user-menu {
+    display: none;
+    position: fixed;
+    right: 2rem;
+    top: 4rem;
+    background-color: #e0e0e0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.user-menu ul {
+    list-style: none;
+    padding: 1rem;
+}
+
+.user-menu ul li {
+    margin-bottom: 1rem;
+}
+
+.user-menu ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 15px; 
+    padding: 5px 5px 0px 5px; 
+}
+
+
+.show {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    font-size: 15px;
     color: #fff;
     display: flex;
     align-items: center;
     transition: background-color 0.3s;
-}
-
-.sidebar a .link-texto {
-    display: none; 
-}
-
-.sidebar.aberto a .link-texto {
-    display: inline; 
-    margin-left: 10px;
-}
-
-.sidebar a:hover {
-    background-color: #559da8;
-}
-
-.sidebar .botao-links {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
+    gap: 0.3rem;
 }
 
 
-.icone-perfil {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+.navbar a:hover {
+    background-color: #207283;
+    color: #fff;
+    
 }
-  
-.content {
-    padding: 20px;
-    margin: 0 auto; 
-    max-width: 1000px;
+.user-menu a:hover {
+    background-color: #c0c0c0; 
+    color: #333;
+   
+}
+
+.menu li a:hover {
+    background-color: #c0c0c0; 
+    color: #333; 
 }
 
 
-h1 {
+.grupos {
     font-size: 30px;
     margin-top: 10px;
     color: #155967;
     text-align: center;
 }
 
-.user-icon img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-}
 
 .create-group {
     text-align: left; /* Alinha o conteúdo à esquerda */
-    margin: 20px 0;
+    margin: 20px 100px;
 }
 
 .create-group a {
@@ -203,3 +232,39 @@ h1 {
     'GRAD' 0,
     'opsz' 48
   }
+
+  /* modal */
+  .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px; 
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

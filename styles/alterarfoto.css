@@ -1,3 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,88 +12,129 @@ body {
     background-color: #f4f4f4;
     overflow-x: hidden; 
 }
+/*Início da header/topbar/navbar*/
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #155967;
+    padding: 1rem 2rem;
+    color: white;
+    flex-direction: row;
+}
 
-.icone-menu {
-    cursor: pointer;
-    background-color: #80c8d8;
-    position: fixed;
-    z-index: 2;
-    top: 15px;
-    padding: 15px 20px;
-    text-decoration: none;
-    color: #fff;
+.logo-container {
     display: flex;
     align-items: center;
-    width: 15px;
 }
 
-.sidebar {
-    height: 100%;
-    width: 60px; 
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #80c8d8;
-    overflow-x: hidden;
-    transition: width 0.3s;
-    padding-top: 20px;
-    z-index: 1;
+.logo {
+    font-size: 1.5rem;
+    margin-right: 2rem;
 }
 
-.sidebar.aberto {
-    width: 200px; 
+.icons {
+    display: flex;
+    gap: 1rem;
 }
 
-.sidebar .logo {
+.icon {
     display: flex;
     align-items: center;
-    padding: 10px 15px;
-    color: #fff;
-    font-size: 12px;
-    margin-bottom: 20px;
+    gap: 0.5rem;
 }
 
-.sidebar .logo img {
+.icon img {
     width: 40px;
-    height: auto;
-    margin-right: 10px;
+    height: 40px;
 }
 
-.sidebar .logo .logo-texto {
-    display: none; 
+.menu {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    background-color: #e0e0e0;
+    padding: 0.5rem;
+    color: #333;
 }
 
-.sidebar.aberto .logo .logo-texto {
-    display: inline; 
-}
-
-.sidebar a {
-    padding: 15px 20px;
+.menu li a {
+    display: flex; 
+    align-items: center; 
+    padding: 0.2rem 0.4rem; 
     text-decoration: none;
-    font-size: 18px;
+    color: #333;
+    transition: background-color 0.3s; 
+}
+
+.user {
+    cursor: pointer;
+}
+
+.user img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.user-menu {
+    display: none;
+    position: fixed;
+    right: 2rem;
+    top: 4rem;
+    background-color: #e0e0e0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.user-menu ul {
+    list-style: none;
+    padding: 1rem;
+}
+
+.user-menu ul li {
+    margin-bottom: 1rem;
+}
+
+.user-menu ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 15px; 
+    padding: 5px 5px 0px 5px; 
+}
+
+
+.show {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    font-size: 15px;
     color: #fff;
     display: flex;
     align-items: center;
     transition: background-color 0.3s;
+    gap: 0.3rem;
 }
 
-.sidebar a .link-texto {
-    display: none; 
+
+.navbar a:hover {
+    background-color: #207283;
+    color: #fff;
+    
+}
+.user-menu a:hover {
+    background-color: #c0c0c0; 
+    color: #333;
+  
 }
 
-.sidebar.aberto a .link-texto {
-    display: inline; 
-    margin-left: 10px;
-}
-
-.sidebar a:hover {
-    background-color: #559da8;
-}
-
-.sidebar .botao-links {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
+.menu li a:hover {
+    background-color: #c0c0c0; 
+    color: #333; 
 }
 
 .content {
@@ -94,41 +142,14 @@ body {
     padding: 40px;
 }
 
-h1 {
+.config {
     font-size: 30px;
     text-align: center;
     margin-top: 10px;
     color: #155967;
 }
 
-.profile-box {
-    background-color: white;
-    padding: 20px; /* Reduzido de 30px para 15px */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 500px; /* Reduzido de 430px para 300px */
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start; /* Alinha o conteúdo no topo */
-    height: auto; /* Ajuste a altura para auto para o card se ajustar ao conteúdo */
-}
-
-
-.profile-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-}
-
-#edit {
-    text-align: center;
-    margin-bottom: 20px; /* Adiciona espaçamento entre o texto e a foto de perfil */
-}
-
-#edit h2 {
+edit h2 {
     font-size: 24px;
     color: #155967;
     margin: 0;
@@ -202,4 +223,9 @@ input::placeholder {
     'wght' 400,
     'GRAD' 0,
     'opsz' 48
+}
+
+.alterar{
+    text-align: center;
+    
 }

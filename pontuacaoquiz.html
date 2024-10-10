@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resultado - TAG</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="./styles/pontuacaoquiz.css">
+    <title>Resultado - TAG</title>
+    
 </head>
 <body>
     <header>
@@ -33,13 +35,18 @@
             
         <div id="user-menu" class="user-menu">
             <ul>
-                <li><a href="#configuracoes" onclick="window.location.href='./configuracoes.html'">Configurações</a></li>
-                <li><a href="#telainicial" onclick="window.location.href='./telainicial.html'">Sair</a></li>
+                <li><a href="#configuracoes" onclick="window.location.href='./configuracoes.html'">Configurações 
+                    <span class="material-symbols-outlined">settings</span>
+                </a></li>
+                
+                <li><a href="#sair" onclick="window.location.href='./login.html'">Sair
+            <span class="material-symbols-outlined">logout</span> 
+        </a></li>
             </ul>
         </div>
        
         <div class="user" onclick="toggleUserMenu()">
-            <img src="user-icon.png" alt="Ícone de usuário">
+            <img src="https://i.pinimg.com/736x/14/4a/77/144a77448696e1047ba242c12aa522f0.jpg" alt="Ícone de usuário">
         </div>
     </div>
 
@@ -54,14 +61,14 @@
 
     <main>
         <div class="result-container">
-            <h2>{nome grupo}</h2>
+            <h2 class="nomegrupo">{nome grupo}</h2>
 
             <div class="result">
                 <h3 id="msg-acertos">Parabéns!</h3>
                 <p id="perguntas-acertadas">Você acertou {qtd perguntas acertadas} de {total perguntas} questões!</p>
 
                 <div class="user-info">
-                    <img src="user-placeholder.png" alt="Avatar" id="avatar">
+                    <img src="https://i.pinimg.com/736x/14/4a/77/144a77448696e1047ba242c12aa522f0.jpg" alt="Avatar" id="avatar">
                     <p class="user-name" id="user-name">{Nome do usuário}</p>
                     <p class="score" id="pontuacao">{pontuacao}</p>
                 </div>

@@ -1,3 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,8 +12,6 @@ body {
     background-color: #f4f4f4;
     overflow-x: hidden; 
 }
-
-
 /*Início da header/topbar/navbar*/
 .navbar {
     width: 100%;
@@ -41,8 +46,8 @@ body {
 }
 
 .icon img {
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
 }
 
 .menu {
@@ -52,13 +57,16 @@ body {
     gap: 1rem;
     background-color: #e0e0e0;
     padding: 0.5rem;
-    border-radius: 5px;
+    color: #333;
 }
 
 .menu li a {
-    color: #333;
+    display: flex; 
+    align-items: center; 
+    padding: 0.2rem 0.4rem; 
     text-decoration: none;
-    font-size: 1rem;
+    color: #333;
+    transition: background-color 0.3s; 
 }
 
 .user {
@@ -66,8 +74,8 @@ body {
 }
 
 .user img {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
 }
 
@@ -77,8 +85,8 @@ body {
     right: 2rem;
     top: 4rem;
     background-color: #e0e0e0;
-    border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
 }
 
 .user-menu ul {
@@ -91,10 +99,12 @@ body {
 }
 
 .user-menu ul li a {
-    color: #333;
+    color: #000000;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 15px; 
+    padding: 5px 5px 0px 5px; 
 }
+
 
 .show {
     display: block;
@@ -107,9 +117,28 @@ a {
     display: flex;
     align-items: center;
     transition: background-color 0.3s;
+    gap: 0.3rem;
+}
+
+
+.navbar a:hover {
+    background-color: #207283;
+    color: #fff;
+   
+}
+.user-menu a:hover {
+    background-color: #c0c0c0; 
+    color: #333;
+  
+}
+
+.menu li a:hover {
+    background-color: #c0c0c0; 
+    color: #333; 
 }
 
 /*Fim da navbar*/
+
 .icone-perfil {
     position: absolute;
     top: 20px;

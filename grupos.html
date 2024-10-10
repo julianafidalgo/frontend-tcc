@@ -8,57 +8,57 @@
     <title>Grupos</title>
 </head>
 <body>
-    <div class="icone-menu" onclick="toggleSidebar()">
-        <span class="material-symbols-outlined">menu</span>
-    </div>
-
-    <div class="sidebar" id="sidebar">
-        <div class="logo">
-            <img src="logo.png" alt="Logo">
-            <span class="logo-texto">TAG</span>
+    <header>
+        <div class="navbar">
+            <div class="logo-container">
+                <h1 class="logo">UniFocus</h1>
+                <div class="icons">
+                    <a href="#grupos" onclick="window.location.href='./grupos.html'">
+                        <span class="material-symbols-outlined">groups</span> 
+                        <span class="link-texto">Grupos</span>
+                    </a>
+                    <a href="#cronometro" onclick="window.location.href='./pomodoro.html'">
+                        <span class="material-symbols-outlined">alarm</span> 
+                        <span class="link-texto">Cronômetro</span>
+                    </a>
+                    </a>
+                    <a href="#ranking" onclick="window.location.href='./ranking.html'">
+                        <span class="material-symbols-outlined">star</span>
+                        <span class="link-texto">Ranking</span>
+                    </a>
+                    <a href="#tarefas" onclick="window.location.href='./tarefas.html'">
+                        <span class="material-symbols-outlined">view_kanban</span>
+                        <span class="link-texto">Tarefas</span>
+                    </a> </div>
+            </div>
+            
+        <div id="user-menu" class="user-menu">
+            <ul>
+                <li><a href="#configuracoes" onclick="window.location.href='./configuracoes.html'">Configurações 
+                    <span class="material-symbols-outlined">settings</span>
+                </a></li>
+                
+                <li><a href="#sair" onclick="window.location.href='./login.html'">Sair
+            <span class="material-symbols-outlined">logout</span> 
+        </a></li>
+            </ul>
         </div>
-        <a href="#grupos" onclick="window.location.href='./grupos.html'">
-            <span class="material-symbols-outlined">groups</span> 
-            <span class="link-texto">Grupos</span>
-        </a>
-        <a href="#cronometro" onclick="window.location.href='./pomodoro.html'">
-            <span class="material-symbols-outlined">alarm</span> 
-            <span class="link-texto">Cronômetro</span>
-        </a>
-        <a href="#perguntas" onclick="window.location.href='./perguntas.html'">
-            <span class="material-symbols-outlined">design_services</span>
-            <span class="link-texto">Perguntas</span>
-        </a>
-        <a href="#ranking" onclick="window.location.href='./ranking.html'">
-            <span class="material-symbols-outlined">star</span>
-            <span class="link-texto">Ranking</span>
-        </a>
-        <a href="#tarefas" onclick="window.location.href='./tarefas.html'">
-            <span class="material-symbols-outlined">view_kanban</span>
-            <span class="link-texto">Tarefas</span>
-        </a>
-
-        <div class="botao-links">
-            <a href="#configuracoes" onclick="window.location.href='./configuracoes.html'"> 
-                <span class="material-symbols-outlined">settings</span>
-                <span class="link-texto">Configurações</span>
-            </a>
-            <a href="#sair" onclick="window.location.href='./login.html'">
-                <span class="material-symbols-outlined">logout</span>
-                <span class="link-texto">Sair</span>
-            </a>
+       
+        <div class="user" onclick="toggleUserMenu()">
+            <img src="https://i.pinimg.com/736x/14/4a/77/144a77448696e1047ba242c12aa522f0.jpg" alt="Ícone de usuário">
         </div>
     </div>
 
-    <div class="icone-perfil">
-        <img src="icons/user.png" alt="Usuário">
-    </div>
-    
+    <ul class="menu">
+        <li><a href="#">Tarefas</a></li>
+        <li><a href="#">Perguntas</a></li>
+        <li><a href="#">Ranking</a></li>
+        <li><a href="#">Membros</a></li>
+        <li><a href="#">Configurações</a></li>
+    </ul>
+    </header>
     <div class="content">
-        <h1>Grupos</h1>
-        <div class="user-icon">
-            <!--<img src="user-icon.png" alt="Usuário">-->
-        </div>
+        <h1 class="grupos">Grupos</h1>
         <div class="create-group">
             <a href="#" onclick="showCreateGroupModal()">+ Criar grupo</a>
         </div>
@@ -83,10 +83,6 @@
     </div>
 
     <script>
-        function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('aberto');
-        }
     
         function showCreateGroupModal() {
             document.getElementById("createGroupModal").style.display = "block";
@@ -111,45 +107,11 @@
                 closeCreateGroupModal();
             }
         };
+
+        function toggleUserMenu() {
+            var menu = document.getElementById('user-menu');
+            menu.classList.toggle('show');
+        }
     </script>
-    
-
-    <style>
-        /* Estilos do modal */
-        .modal {
-            display: none; 
-            position: fixed; 
-            z-index: 1000; 
-            left: 0;
-            top: 0;
-            width: 100%; 
-            height: 100%; 
-            overflow: auto; 
-            background-color: rgba(0, 0, 0, 0.5); 
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto; 
-            padding: 20px;
-            border: 1px solid #888;
-            width: 300px; 
-            text-align: center;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-    </style>
 </body>
 </html>

@@ -8,44 +8,55 @@
     <title>Tela Principal</title>
 </head>
 <body>
-    <div class="topnav" id="topnav">
-        <div class="logo">
-            <img src="logo.png" alt="Logo">
-            <span class="logo-texto">TAG</span>
-        </div>
-        <a href="#grupos" onclick="window.location.href='./grupos.html'">
-            <span class="material-symbols-outlined">groups</span> 
-            <span class="link-texto">Grupos</span>
-        </a>
-        <a href="#cronometro" onclick="window.location.href='./pomodoro.html'">
-            <span class="material-symbols-outlined">alarm</span> 
-            <span class="link-texto">Cronômetro</span>
-        </a>
-        <a href="#perguntas" onclick="window.location.href='./perguntas.html'">
-            <span class="material-symbols-outlined">design_services</span>
-            <span class="link-texto">Perguntas</span>
-        </a>
-        <a href="#ranking" onclick="window.location.href='./ranking.html'">
-            <span class="material-symbols-outlined">star</span>
-            <span class="link-texto">Ranking</span>
-        </a>
-        <a href="#tarefas" onclick="window.location.href='./tarefas.html'">
-            <span class="material-symbols-outlined">view_kanban</span>
-            <span class="link-texto">Tarefas</span>
-        </a>
-    </div>
-    <div class="icone-perfil" onclick="toggleMenu()">
-        <img src="icons/user.png" alt="Usuário">
-        <span class="material-symbols-outlined icone-seta">arrow_drop_up</span>
-    </div>
-    <div class="menu-usuario" id="menuUsuario">
-        <a href="#configuracoes" onclick="window.location.href='./configuracoes.html'">Configurações 
-            <span class="material-symbols-outlined">settings</span>
-        </a>
-        <a href="#sair" onclick="window.location.href='./login.html'">Sair
+    <header>
+        <div class="navbar">
+            <div class="logo-container">
+                <h1 class="logo">UniFocus</h1>
+                <div class="icons">
+                    <a href="#grupos" onclick="window.location.href='./grupos.html'">
+                        <span class="material-symbols-outlined">groups</span> 
+                        <span class="link-texto">Grupos</span>
+                    </a>
+                    <a href="#cronometro" onclick="window.location.href='./pomodoro.html'">
+                        <span class="material-symbols-outlined">alarm</span> 
+                        <span class="link-texto">Cronômetro</span>
+                    </a>
+                    </a>
+                    <a href="#ranking" onclick="window.location.href='./ranking.html'">
+                        <span class="material-symbols-outlined">star</span>
+                        <span class="link-texto">Ranking</span>
+                    </a>
+                    <a href="#tarefas" onclick="window.location.href='./tarefas.html'">
+                        <span class="material-symbols-outlined">view_kanban</span>
+                        <span class="link-texto">Tarefas</span>
+                    </a> </div>
+            </div>
+            
+        <div id="user-menu" class="user-menu">
+            <ul>
+                <li><a href="#configuracoes" onclick="window.location.href='./configuracoes.html'">Configurações 
+                    <span class="material-symbols-outlined">settings</span>
+                </a></li>
+                
+                <li><a href="#sair" onclick="window.location.href='./login.html'">Sair
             <span class="material-symbols-outlined">logout</span> 
-        </a>
+        </a></li>
+            </ul>
+        </div>
+       
+        <div class="user" onclick="toggleUserMenu()">
+            <img src="https://i.pinimg.com/736x/14/4a/77/144a77448696e1047ba242c12aa522f0.jpg" alt="Ícone de usuário">
+        </div>
     </div>
+
+    <ul class="menu">
+        <li><a href="#">Tarefas</a></li>
+        <li><a href="#">Perguntas</a></li>
+        <li><a href="#">Ranking</a></li>
+        <li><a href="#">Membros</a></li>
+        <li><a href="#">Configurações</a></li>
+    </ul>
+    </header>
 
     <div class="content" id="content">
         <h1 class="titulo">Olá, {usuário}!</h1>
@@ -61,19 +72,12 @@
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    <script>
-        function toggleMenu() {
-            const menuUsuario = document.getElementById('menuUsuario');
-            const iconeSeta = document.querySelector('.icone-seta');
-            menuUsuario.classList.toggle('mostrar');
-            
-            // Alterna entre as setas 'arrow_drop_up' e 'arrow_drop_down'
-            if (menuUsuario.classList.contains('mostrar')) {
-                iconeSeta.textContent = 'arrow_drop_down';
-            } else {
-                iconeSeta.textContent = 'arrow_drop_up';
-            }
+        <script>
+        function toggleUserMenu() {
+            var menu = document.getElementById('user-menu');
+            menu.classList.toggle('show');
         }
+    
     </script>
 </body>
 </html>

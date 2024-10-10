@@ -21,6 +21,7 @@
                         <span class="material-symbols-outlined">alarm</span> 
                         <span class="link-texto">Cronômetro</span>
                     </a>
+                    </a>
                     <a href="#ranking" onclick="window.location.href='./ranking.html'">
                         <span class="material-symbols-outlined">star</span>
                         <span class="link-texto">Ranking</span>
@@ -28,29 +29,33 @@
                     <a href="#tarefas" onclick="window.location.href='./tarefas.html'">
                         <span class="material-symbols-outlined">view_kanban</span>
                         <span class="link-texto">Tarefas</span>
-                    </a> 
-                </div>
+                    </a> </div>
             </div>
             
-            <div id="user-menu" class="user-menu">
-                <ul>
-                    <li><a href="#configuracoes" onclick="window.location.href='./configuracoes.html'">Configurações</a></li>
-                    <li><a href="#telainicial" onclick="window.location.href='./telainicial.html'">Sair</a></li>
-                </ul>
-            </div>
-       
-            <div class="user" onclick="toggleUserMenu()">
-                <img src="user-icon.png" alt="Ícone de usuário">
-            </div>
+        <div id="user-menu" class="user-menu">
+            <ul>
+                <li><a href="#configuracoes" onclick="window.location.href='./configuracoes.html'">Configurações 
+                    <span class="material-symbols-outlined">settings</span>
+                </a></li>
+                
+                <li><a href="#sair" onclick="window.location.href='./login.html'">Sair
+            <span class="material-symbols-outlined">logout</span> 
+        </a></li>
+            </ul>
         </div>
+       
+        <div class="user" onclick="toggleUserMenu()">
+            <img src="https://i.pinimg.com/736x/14/4a/77/144a77448696e1047ba242c12aa522f0.jpg" alt="Ícone de usuário">
+        </div>
+    </div>
 
-        <ul class="menu">
-            <li><a href="#">Tarefas</a></li>
-            <li><a href="#">Perguntas</a></li>
-            <li><a href="#">Ranking</a></li>
-            <li><a href="#">Membros</a></li>
-            <li><a href="#">Configurações</a></li>
-        </ul>
+    <ul class="menu">
+        <li><a href="#">Tarefas</a></li>
+        <li><a href="#">Perguntas</a></li>
+        <li><a href="#">Ranking</a></li>
+        <li><a href="#">Membros</a></li>
+        <li><a href="#">Configurações</a></li>
+    </ul>
         <div class="group">{Nome do grupo}
         </div>
 
@@ -58,7 +63,12 @@
             <span id="back" class="material-symbols-outlined">arrow_back_ios</span>
             <a class="groups">Grupos</a>
         </div>
-        
+        <script>
+            function toggleUserMenu() {
+                var menu = document.getElementById('user-menu');
+                menu.classList.toggle('show');
+            }
+        </script>
 
 </header>
 </body>
