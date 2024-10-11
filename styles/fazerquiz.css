@@ -27,12 +27,6 @@ p {
     text-align: center;
 }
 
-.btns {
-    justify-content: space-around;
-    display: flex;
-}
-
-
 .start-btn {
     background-color: #5ca1b2;
     color: white;

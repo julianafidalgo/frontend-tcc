@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="./styles/quiz.css">
+    <link rel="stylesheet" href="./styles/fazerquiz.css">
     <title>Quiz</title>
     
 </head>
@@ -63,11 +63,9 @@
             <h2>Quiz</h2>
             <div class="quiz-content">
                 <h3 id="group-name">{nome grupo}</h3>
-                <p>Você deseja responder um quiz do grupo ou criar um novo?</p>
-                <div class="btns">
-                    <button class="start-btn" id="btn1" onclick="window.location.href='./responderquiz.html'">Responder quiz</button>
-                    <button class="start-btn" id="btn2" onclick="window.location.href='./fazerquiz.html'">Criar quiz</button>
-                </div>
+                <p>Você está prestes a iniciar o quiz!</p>
+                <p id="question-count">Este quiz contém X questões</p>
+                <button class="start-btn">Iniciar</button>
             </div>
     </div>
     <!--Modelo para fazer requisição na API-->
