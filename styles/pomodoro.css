@@ -11,6 +11,10 @@ body {
   padding: 0;
   background-color: #f4f4f4;
   overflow-x: hidden; 
+  background-image: url(/img/clock.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position: 47% -300%;
 }
 
 /*Início da header/topbar/navbar*/
@@ -143,6 +147,9 @@ a {
 .container {
   display: flex;
   width: 100%;
+  align-items: start;
+  text-align: left;
+
 }
 
 .menu-item {
@@ -173,42 +180,27 @@ a {
   margin-bottom: 20px;
 }
 
-.header h1 {
-  font-size: 24px;
-  color: #155967;
-  padding: 15px;
-  margin: 0 auto; 
-  max-width: 1000px;
-  text-align: center;
-  padding-top: 40px; 
-  font-size: 35px;
-}
-
 .header p {
   font-size: 30px;
   color: #666;
   display: flex;
-  flex-direction: column;
-  align-items: center;  
-  text-align: center; 
+  align-items: left;  
+  text-align:left; 
   margin: 0 auto; 
   max-width: 800px; 
-}
+  padding: 45px;
+} 
 
 /* Timer Box */
 .timer-box {
-  background-color: white;
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  padding: 100px;
+  text-align: center; 
 }
 
 /* Timer Display */
 #circularProgressBar {
   width: 300px;
   height: 200px;
-  background-color: #ffffff;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -218,8 +210,8 @@ a {
 }
 
 .progress-value {
-  font-size: 64px;
-  color: #484545;
+  font-size: 90px;
+  color: #403f3f;
   font-weight: bold;
 }
 
