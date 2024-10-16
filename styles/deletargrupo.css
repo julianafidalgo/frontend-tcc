@@ -139,20 +139,13 @@ a {
 
 
 /*Fim da navbar*/
-.content {
-    padding: 40px;
-    background-color: #f7f7f7;
-    min-height: calc(100vh - 80px); /* Ajuste para garantir que o conteúdo ocupe a altura restante da tela */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 h2 {
     color: #155967;
-    font-size: 2em;
+    font-size: 30px;
     text-align: center;
     margin-bottom: 20px; /* Espaço abaixo do título */
+    padding: 15px;
 }
 
 .delete-group {
@@ -200,15 +193,16 @@ h2 {
 
 .actions {
     display: flex;
-    flex-direction: column;
     align-items: center; 
-    gap: 10px; 
+    gap: 40px; 
     margin-top: 20px;
+    justify-content: center;
+    padding: 10px;
 }
 
 .delete-btn, .cancel-btn {
-    width: 200px; 
-    padding: 12px 24px; 
+    width: 130px; 
+    padding: 10px; 
     border-radius: 5px;
     font-size: 18px;
     cursor: pointer;
@@ -217,7 +211,7 @@ h2 {
 }
 
 .delete-btn {
-    background-color: #559da8;
+    background-color: #207283;
     color: white;
 }
 
@@ -226,12 +220,15 @@ h2 {
 }
 
 .cancel-btn {
-    background-color: #ccc;
-    color: white;
+    background-color: #fff;
+    color: #155967;
+    border: 1px solid #155967;
 }
 
 .cancel-btn:hover {
-    background-color: #929292;
+    background-color: #e2e0e0;
+    color: #155967;
+    border: 1px solid #155967;
 }
 
 .material-symbols-outlined {

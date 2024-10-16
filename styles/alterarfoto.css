@@ -159,27 +159,36 @@ edit h2 {
     color: #999;
     font-size: 16px;
     margin-top: 10px;
+    text-align: center;
+    padding-bottom: 10px;
 }
 
-.profile-header .avatar {
-    width: 190px;
+.profile-header {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    position: relative; 
+}
+
+.avatar {
+    width: 190px; 
     height: 190px;
-    border-radius: 50%;
-    margin-bottom: 17px;
+    border-radius: 50%; 
+    margin-bottom: 28px; 
 }
 
 .camera-icon {
-    font-size: 32px;
-    color: #454545;
-    position: absolute;
-    margin-bottom: 15px;
-    bottom: 0;
-    left: 60%;
+    font-size: 32px; 
+    color: #454545; 
+    position: absolute; 
+    bottom: 10px; 
+    left: 50%; 
+    transform: translateX(100%); /* Ajusta o ícone para que fique centrado */
 }
 
 .confirm-btn {
-    width: 200px;
-    background-color: #80c8d8;
+    width: 130px;
+    background-color: #207283;
     color: white;
     border: none;
     padding: 10px;
@@ -191,26 +200,29 @@ edit h2 {
 }
 
 .confirm-btn:hover {
-    background-color: #559da8;
+    background-color: #155967;
 }
 
 .cancel-btn {
-    width: 200px;
-    background-color: #ccc;
-    color: white;
+    width: 130px;
+    background-color: #fff;
+    color: #155967;
     border: none;
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 18px;
     margin-bottom: 10px;
-    transition: background-color 0.3s ease;
+    border: 1px solid #155967;
+    
 }
 
 .cancel-btn:hover {
-    background-color: #929292;
-    color: white;
+    background-color: #e2e0e0;
+    color: #155967;
+    border: 1px solid #155967;
 }
+
 
 input::placeholder {
     color: #999;
@@ -227,5 +239,13 @@ input::placeholder {
 
 .alterar{
     text-align: center;
-    
+    color: #155967;    
+    padding: 15px;
+}
+
+.button-group{
+    display: flex;
+    justify-content: center;
+    gap: 40px; 
+    padding: 10px;
 }

@@ -137,7 +137,10 @@ a {
     color: #333; 
 }
 
-
+.nomeranking{
+    color: #155967;
+    padding-bottom: 15px;
+}
 .ranking-container {
     text-align: center;
     padding: 20px;

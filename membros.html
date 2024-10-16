@@ -108,8 +108,8 @@
             <h2 class="modal-title">Confirmação de Exclusão</h2>
             <p>Tem certeza de que deseja remover <span id="memberName"></span> do grupo?</p>
             <div class="modal-buttons">
-                <button class="modal-button" onclick="confirmDelete()">Excluir</button>
                 <button class="modal-button" onclick="closeModal()">Cancelar</button>
+                <button class="modal-button" onclick="confirmDelete()">Excluir</button>
             </div>
         </div>
     </div>
@@ -118,7 +118,7 @@
     <div id="inviteModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeInviteModal()">&times;</span>
-            <h2 class="nome-grupo">Fatecanos</h2>
+            <h2 class="nome-grupo">{nome grupo}</h2>
             <h3 class="invite">Convite</h3>
             <p class="texto">Digite o e-mail da pessoa para enviarmos um link de convite para o seu grupo.</p>
             <input id="Email" type="email" placeholder="E-mail" required>

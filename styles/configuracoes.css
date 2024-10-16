@@ -138,17 +138,12 @@ a {
 }
 /*Fim da navbar*/
 
-
-.content {
-    flex: 1;
-    padding: 40px;
-}
-
 .config {
     font-size: 30px;
     text-align: center;
     margin-bottom: 15px;
     color: #155967;
+    padding: 15px;
 }
 
 .profile-box {
@@ -223,8 +218,8 @@ section {
 }
 
 .confirm-btn {
-    width: 200px;
-    background-color: #80c8d8;
+    width: 130px;
+    background-color: #207283;
     color: white;
     border: none;
     padding: 10px;
@@ -236,25 +231,27 @@ section {
 }
 
 .confirm-btn:hover {
-    background-color: #559da8;
+    background-color: #155967;
 }
 
 .cancel-btn {
-    width: 200px;
-    background-color: #ccc;
-    color: white;
+    width: 130px;
+    background-color: #fff;
+    color: #155967;
     border: none;
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 18px;
     margin-bottom: 10px;
+    border: 1px solid #155967;
     transition: background-color 0.3s ease;
 }
 
 .cancel-btn:hover {
-    background-color: #929292;
-    color: white;
+    background-color: #e2e0e0;
+    color: #155967;
+    border: 1px solid #155967;
 }
 
 .delete-account {
@@ -281,6 +278,14 @@ input::placeholder {
     'GRAD' 0,
     'opsz' 48
   }
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 40px; 
+    padding: 10px;
+}
+
 
   
 

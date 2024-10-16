@@ -34,7 +34,7 @@ p {
 
 
 .start-btn {
-    background-color: #5ca1b2;
+    background-color: #207283;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -45,7 +45,7 @@ p {
 }
 
 .start-btn:hover {
-    background-color: #4a8d9d;
+    background-color: #155967;
 }
 
 /*Início da header/topbar/navbar*/
@@ -185,6 +185,11 @@ h2 {
     margin-top: 10px;
     color: #155967;
     text-align: center;
+    padding-bottom: 15px;
+}
+
+#group-name{
+    padding-bottom: 15px;
 }
 
 .user-icon img {

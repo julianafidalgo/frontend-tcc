@@ -88,25 +88,6 @@ body {
     height: 40px;
 }
 
-.menu {
-    width: 100%;
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-    background-color: #e0e0e0;
-    padding: 0.5rem;
-    color: #333;
-}
-
-.menu li a {
-    display: flex; 
-    align-items: center; 
-    padding: 0.2rem 0.4rem; 
-    text-decoration: none;
-    color: #333;
-    transition: background-color 0.3s; 
-}
-
 .user {
     cursor: pointer;
 }

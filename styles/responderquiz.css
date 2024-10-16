@@ -140,8 +140,8 @@ a {
 
 /*Fim da navbar*/
 .quiz-container {
-    margin: 2rem auto;
-    padding: 2rem;
+    margin: 1rem auto;
+    padding: 20px;
     background-color: white;
     width: 80%;
     max-width: 600px;
@@ -152,6 +152,7 @@ a {
 .quiz-container h2, .quiz-container h3 {
     text-align: center;
     color: #155967;
+    padding: 7px;
 }
 
 .question p {
@@ -190,9 +191,26 @@ input[type="radio"] {
 .btn-back {
     background-color: #ccc;
     color: #333;
+    transition: background-color 0.3s;
+}
+
+
+.btn-back:hover {
+    background-color: #b1b0b0;
+    color: #333;
 }
 
 .btn-next {
+    background-color:#207283;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.btn-next:hover {
     background-color:#155967;
     color: white;
+}
+
+#group-name{
+    padding-bottom: 15px;
 }

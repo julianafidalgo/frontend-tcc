@@ -6,6 +6,10 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    background-image: url(/img/backgroud-unifocus.png);
+    background-attachment: fixed;
+    background-size: cover; 
+    background-position: center; 
   }
 
   .container {
@@ -40,7 +44,7 @@ body {
   }
 
 .submit{
-  background-color: #80c8d8;
+  background-color: #207283;
   color: white;
   transition: background-color 0.3s ease;
   padding: 12px 14px;
@@ -52,7 +56,7 @@ body {
   margin-top: 40px;
 }
 .submit:hover{
-  background-color: #559da8;
+  background-color: #155967;
 }
 
 .login{

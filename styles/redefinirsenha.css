@@ -7,6 +7,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url(/img/backgroud-unifocus.png);
+    background-attachment: fixed;
+    background-size: cover; 
+    background-position: center; 
 }
 
 .container {
@@ -63,7 +67,7 @@ p {
 .cancelar{
     display: block;
     text-align: center;
-    color: #575757;
+    color: #575454;
     
     font-size: 14px;
     text-decoration: none;
@@ -74,7 +78,7 @@ p {
 }
 
 .confirmar {
-    background-color: #80c8d8;
+    background-color: #207283;
     color: white;
     font-size: 18px;
     padding: 10px 20px;
@@ -89,7 +93,7 @@ p {
 }
 
 .confirmar:hover {
-    background-color: #559da8;
+    background-color: #155967;
     color: white;
 }
 

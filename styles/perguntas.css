@@ -19,7 +19,7 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: #155967;
-    padding: 1rem 2rem;
+    padding: 0.1rem 2rem;
     color: white;
     flex-direction: row;
 }
@@ -170,7 +170,8 @@ p{
 h2 {
     text-align: center;
     margin-bottom: 10px;
-    color: #1d7d83;
+    color: #155967;
+    padding-bottom: 7px;
 }
 
 label {
@@ -231,15 +232,29 @@ label {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 15px;
 }
 
 .cancel-btn {
     background-color: #fff;
     color: #155967;
     border: 1px solid #155967;
+    transition: background-color 0.3s; 
+}
+
+.cancel-btn:hover {
+    background-color: #e2e0e0;
+    color: #155967;
+    border: 1px solid #155967;
 }
 
 .save-btn {
+    background-color: #207283;
+    color: #fff;
+    transition: background-color 0.3s; 
+}
+
+.save-btn:hover {
     background-color: #155967;
     color: #fff;
 }
