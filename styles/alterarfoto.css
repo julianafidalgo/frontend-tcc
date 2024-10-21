@@ -217,6 +217,7 @@ edit h2 {
     font-size: 18px;
     margin-bottom: 10px;
     border: 1px solid #155967;
+    transition: background-color 0.3s ease;
     
 }
 

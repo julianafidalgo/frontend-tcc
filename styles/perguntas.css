@@ -19,7 +19,7 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: #155967;
-    padding: 0.1rem 2rem;
+    padding: 1rem 2rem;
     color: white;
     flex-direction: row;
 }
@@ -30,8 +30,12 @@ body {
 }
 
 .logo {
-    font-size: 1.5rem;
-    margin-right: 2rem;
+    cursor: pointer;
+    margin-right: 40px;
+}
+
+.logo img {
+    height: 40px;
 }
 
 .icons {
@@ -81,7 +85,7 @@ body {
 
 .user-menu {
     display: none;
-    position: fixed;
+    position: absolute;
     right: 2rem;
     top: 4rem;
     background-color: #e0e0e0;
@@ -124,137 +128,140 @@ a {
 .navbar a:hover {
     background-color: #207283;
     color: #fff;
-   
+    
 }
 .user-menu a:hover {
     background-color: #c0c0c0; 
     color: #333;
-   
+    
 }
 
 .menu li a:hover {
     background-color: #c0c0c0; 
     color: #333; 
 }
-
 /*Fim da navbar*/
 
-main {
-    
-    margin: 20px;
+.quiz-container {
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
+.quiz-container h2 {
     text-align: center;
-    margin: 20px 0;
-}
-
-.form-section {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 20px;
-    width: 50%;
-    margin: 0 auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-p{
-    text-align: center;
-}
-
-#certa {
-    text-align: left;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 10px;
     color: #155967;
-    padding-bottom: 7px;
+}
+
+.form-group {
+    margin-bottom: 1rem;
 }
 
 label {
     display: block;
-    margin: 10px 0 5px;
+    margin-bottom: 0.5rem;
     font-weight: bold;
 }
 
-.radio-group label {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.radio-group input[type="radio"] {
-    margin-right: 10px;
-}
-
-
-#question {
+input[type="text"],
+select {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 0.5rem;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 5px;
 }
 
-.alternativa{
-    width: 97%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-weight: bold;
-}
-
-.radio-group label {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.more-alternatives {
-    display: block;
-    margin-top: 10px;
-    color: #155967;
-    text-decoration: none;
+input[type="text"]:focus,
+select:focus {
+    border-color: #155967;
+    outline: none;
 }
 
 .buttons {
     display: flex;
     justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.btn-back,
+.btn-save {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+      transition: background-color 0.3s ease;
+}
+
+.btn-back {
+    background-color: #ccc;
+    color: #333;
+}
+
+.btn-back:hover {
+    background-color: #999;
+    color: #333;
+}
+
+.btn-save {
+    background-color: #207283;
+    color: white;
+}
+
+.btn-save:hover {
+    background-color: #155967;
+    color: white;
+}
+
+.pergunta {
+    margin-top: 50px;
+}
+
+.lista-perguntas {
+    max-height: 342px;
+    overflow-y: scroll;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.lista-perguntas::-webkit-scrollbar {
+    width: 8px;
+}
+
+.lista-perguntas::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+}
+
+.lista-perguntas::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+.alternativa-correta {
     margin-top: 20px;
 }
 
-.cancel-btn, .save-btn {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+.opcoesLista {
+    justify-content: space-between; 
+    display: flex;
+    flex-direction: row;
+}
+
+#adicionar-alternativa, #remover-alternativa {
+    margin-top: 10px;
+    text-decoration: underline;
+    color: rgb(0, 0, 0);
     font-size: 15px;
+    cursor: pointer;
 }
 
-.cancel-btn {
-    background-color: #fff;
-    color: #155967;
-    border: 1px solid #155967;
-    transition: background-color 0.3s; 
-}
-
-.cancel-btn:hover {
-    background-color: #e2e0e0;
-    color: #155967;
-    border: 1px solid #155967;
-}
-
-.save-btn {
-    background-color: #207283;
-    color: #fff;
-    transition: background-color 0.3s; 
-}
-
-.save-btn:hover {
-    background-color: #155967;
-    color: #fff;
+.disabled {
+    color: grey !important;
+    text-decoration: none !important;
+    cursor: default !important;
 }

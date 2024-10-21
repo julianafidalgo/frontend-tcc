@@ -11,7 +11,9 @@
     <header>
         <div class="navbar">
             <div class="logo-container">
-                <h1 class="logo">UniFocus</h1>
+                <div class="logo" onclick="window.location.href='./telaprincipal.html'" >
+                    <img src="./img/logo_nav.png" alt="Logo">
+                </div>
                 <div class="icons">
                     <a href="#grupos" onclick="window.location.href='./grupos.html'">
                         <span class="material-symbols-outlined">groups</span> 
@@ -52,19 +54,15 @@
     </header>
 
     <div class="content" id="content">
-        <h1 class="titulo">Olá, {usuário}!</h1>
+        <h1 class="titulo">Olá, {usuário}.</h1>
     </div>
-    <p class="texto-inicial"><strong>Pronto para começar?</strong></p>
-    <p class="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p class="texto">Bem-vindo ao UniFocus, a solução para potencializar seus estudos!</p>
+    <p class="texto-inicial">Pronto para começar?</p>
+    
+    <div class="container-botao">
+        <button type="button" class="comecaragora" onclick="window.location.href='./grupos.html'">Começar agora</button>
+    </div>
+    
     <script>
         function toggleUserMenu() {
             var menu = document.getElementById('user-menu');

@@ -23,7 +23,7 @@ body {
     font-size: 30px;
     text-align: center;
     margin-top: 10px;
-    color: #155967;
+    color:#3f3f3f;
 }
 
 .texto {
@@ -35,6 +35,9 @@ body {
     margin: 0 auto; 
     max-width: 800px; 
     padding: 20px; 
+    color: #3f3f3f;
+    font-weight: bold;
+    font-size: 30px;
 }
 
 .content {
@@ -68,10 +71,13 @@ body {
 }
 
 .logo {
-    font-size: 1.5rem;
-    margin-right: 2rem;
+    cursor: pointer;
+    margin-right: 40px;
 }
 
+.logo img {
+    height: 40px;
+}
 .icons {
     display: flex;
     gap: 1rem;
@@ -156,3 +162,28 @@ a {
     color: #333; 
 }
 
+.container-botao {
+    display: flex;
+    justify-content: center; /* Alinha horizontalmente */
+    align-items: center; /* Alinha verticalmente */
+    margin-top: 30px; /* Ajusta a distância do conteúdo acima */
+}
+
+.comecaragora{
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 25px;
+    transition: background-color 0.3s ease;
+    background-color: #207283;
+    color: #fff;
+    align-items: center;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.comecaragora:hover{
+    background-color: #155967;
+    color: #fff;
+}

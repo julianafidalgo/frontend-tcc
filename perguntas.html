@@ -11,7 +11,9 @@
     <header>
         <div class="navbar">
             <div class="logo-container">
-                <h1 class="logo">UniFocus</h1>
+                <div class="logo" onclick="window.location.href='./telaprincipal.html'" >
+                    <img src="./img/logo_nav.png" alt="Logo">
+                </div>
                 <div class="icons">
                     <a href="#grupos" onclick="window.location.href='./grupos.html'">
                         <span class="material-symbols-outlined">groups</span> 
@@ -58,54 +60,114 @@
     </ul>
     </header>
     <main>
-        <h2>{nome do grupo}</h2>
-        <section class="form-section">
+        <div class="quiz-container">
             <h2>Criar Pergunta</h2>
-            <p>Crie sua pergunta personalizada!</p>
-            
             <form>
-                <label for="question">Questão</label>
-                <input type="text" id="question" placeholder="Crie uma questão sobre o conteúdo estudado...">
-                
-                <label>Selecione a alternativa correta</label>
-                <div id="alternativas">
-                    <label>
-                    <input type="radio" name = "certa">
-                    <input type="text" class="alternativa" placeholder="Crie a resposta sobre a questão...">
-                    </label>
+                <div class="form-group pergunta">
+                    <label for="pergunta">Pergunta</label>
+                    <input type="text" id="pergunta" name="pergunta" placeholder="Escreva a pergunta..." required>
                 </div>
-                <a href="#" class="more-alternatives" id = 'mais-alts'>+ Mais alternativas</a>
+
+                <label for="lista-perguntas">Alternativas</label>
+                <div class="lista-perguntas">
+                    <div class="form-group">
+                        <label for="alternativa1">Alternativa 1:</label>
+                        <input type="text" id="alternativa1" name="alternativa1" placeholder="Escreva a alternativa..." required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="alternativa2">Alternativa 2:</label>
+                        <input type="text" id="alternativa2" name="alternativa2" placeholder="Escreva a alternativa..." required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="alternativa3">Alternativa 3:</label>
+                        <input type="text" id="alternativa3" name="alternativa3" placeholder="Escreva a alternativa..." required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="alternativa4">Alternativa 4:</label>
+                        <input type="text" id="alternativa4" name="alternativa4" placeholder="Escreva a alternativa..." required>
+                    </div>
+                </div>
+                <div class="opcoesLista">
+                    <p id="adicionar-alternativa" onclick="AdicionarAlternativa()">+ Adicionar alternativa</p>
+                    <p id="remover-alternativa" onclick="RemoverAlternativa()">- Remover alternativa</p>
+                </div>
+
+                <div class="form-group alternativa-correta">
+                    <label for="alternativa-correta">Selecione a Alternativa Correta</label>
+                    <select id="alternativa-correta" name="alternativa-correta" class="select-alternativa" required>
+                        <option value="">Selecione uma alternativa</option>
+                        <option value="1">Alternativa 1</option>
+                        <option value="2">Alternativa 2</option>
+                        <option value="3">Alternativa 3</option>
+                        <option value="4">Alternativa 4</option>
+                    </select>
+                </div>
 
                 <div class="buttons">
-                    <button type="button" class="cancel-btn">Cancelar</button>
-                    <button type="submit" class="save-btn">Criar mais uma pergunta</button>
-                    <button type="submit" class="save-btn">Finalizar</button>
+                    <button type="button" class="btn-back" onclick="window.location.href='./perguntas.html'">Voltar</button>
+                    <button type="submit" class="btn-save">Salvar</button>
                 </div>
             </form>
-        </section>
+        </div>
     </main>
-    <script>
+    <script type="text/javascript">
+        document.getElementById('remover-alternativa').classList.add('disabled');
+
         function toggleUserMenu() {
             var menu = document.getElementById('user-menu');
             menu.classList.toggle('show');
         }
-        
-        document.getElementById('mais-alts').addEventListener('click', function(e) {
-    e.preventDefault(); // Evita o comportamento padrão do link
 
-    // Encontra o container onde as alternativas estão sendo exibidas
-    const alternativesContainer = document.getElementById('alternativas');
+        function AdicionarAlternativa() {
+            var lista = document.getElementsByClassName('lista-perguntas')[0];
+            var numeroAlternativas = lista.getElementsByClassName('form-group').length;
 
-    // Conta quantas alternativas já existem para dar um novo nome único aos inputs
-    const totalAlternatives = alternativesContainer.querySelectorAll('label').length + 1;
+            var numeroPergunta = numeroAlternativas+1;
+            if (numeroPergunta > 4) {
+                document.getElementById('remover-alternativa').classList.remove('disabled');
+            } else {
+                document.getElementById('remover-alternativa').classList.add('disabled');
+            }
 
-    // Cria um novo elemento de label e input
-    const newAlternative = document.createElement('label');
-    newAlternative.innerHTML = `<input type="radio" name = "certa"> <input type="text" class="alternativa" placeholder="Crie a resposta sobre a questão...">`;
+            var novaAlternativa = document.createElement('div');
+            novaAlternativa.className = 'form-group';
 
-    // Adiciona a nova alternativa ao container
-    alternativesContainer.appendChild(newAlternative);
-});
+            novaAlternativa.innerHTML = `
+            <label for="alternativa${numeroPergunta}">Alternativa ${numeroPergunta}:</label>
+            <input type="text" id="alternativa${numeroPergunta}" name="alternativa${numeroPergunta}" placeholder="Escreva a alternativa..." required>
+            `;
+            lista.appendChild(novaAlternativa);
+
+
+
+            var select = document.getElementById('alternativa-correta');
+            var novaOpcao = document.createElement('option');
+            novaOpcao.value = numeroPergunta;
+            novaOpcao.textContent = `Alternativa ${numeroPergunta}`;
+            select.appendChild(novaOpcao);
+
+        }
+
+        function RemoverAlternativa() {
+            if (document.getElementById('remover-alternativa').classList.contains('disabled')) {
+                return;
+            }
+
+            var lista = document.getElementsByClassName('lista-perguntas')[0];
+            var alternativas = lista.getElementsByClassName('form-group');
+            lista.removeChild(alternativas[alternativas.length - 1]);
+
+            var select = document.getElementById('alternativa-correta');
+            var options = select.getElementsByTagName('option');
+            select.removeChild(options[options.length - 1]);
+
+            if (alternativas.length == 4) {
+                document.getElementById('remover-alternativa').classList.add('disabled');
+            }
+        }
     </script>
 </body>
 </html>

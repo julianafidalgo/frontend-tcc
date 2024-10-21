@@ -41,26 +41,31 @@ body {
 }
 
 .slogan {
-    font-size: 24px;
+    font-size: 20px;
+    font-weight: bold;
     margin-bottom: 30px;
-    color: #7ad1e5;
+    color: #fff;
 }
 
 .botao {
-    background-color: #fff;
-    color: #155967;
-    padding: 12px 24px;
-    border: none; 
-    border-radius: 4px;
-    font-size: 18px;
+    width: 130px;
+    background-color: #155967;
+    color: #e2e0e0;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 18px;
+    margin-bottom: 10px;
+    border: 1px solid #e2e0e0;
 }
 
 .botao:hover {
-    background-color: #459eac;
-    color: #fff;
+    background-color: #207283;
+    color: #e2e0e0;
+    border: 1px solid #e2e0e0;
 }
+
 
 .titulo {
     font-size: 32px;
@@ -108,11 +113,13 @@ input[type="password"] {
   font-size: 14px;
   text-align: center;
   padding: 12px 24px;
-  margin-bottom: 10px;
+  margin-top: 10px;
 }
+
 .esqueci-senha a {
-    color: #ccc;
+    color: #8a979a;
     text-decoration: none;
+
 }
 
 .esqueci-senha a:hover {
