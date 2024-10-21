@@ -12,7 +12,7 @@
     <header>
         <div class="navbar">
             <div class="logo-container">
-                <div class="logo" onclick="window.location.href='./telaprincipal.html'" >
+                <div class="logo" onclick="window.location.href='./telaprincipal.html'">
                     <img src="./img/logo_nav.png" alt="Logo">
                 </div>
                 <div class="icons">
@@ -24,7 +24,6 @@
                         <span class="material-symbols-outlined">alarm</span> 
                         <span class="link-texto">Cronômetro</span>
                     </a>
-                    </a>
                     <a href="#ranking" onclick="window.location.href='./ranking.html'">
                         <span class="material-symbols-outlined">star</span>
                         <span class="link-texto">Ranking</span>
@@ -32,34 +31,26 @@
                     <a href="#tarefas" onclick="window.location.href='./tarefas.html'">
                         <span class="material-symbols-outlined">view_kanban</span>
                         <span class="link-texto">Tarefas</span>
-                    </a> </div>
+                    </a>
+                </div>
             </div>
-            
-        <div id="user-menu" class="user-menu">
-            <ul>
-                <li><a href="#configuracoes" onclick="window.location.href='./configuracoes.html'">Configurações 
-                    <span class="material-symbols-outlined">settings</span>
-                </a></li>
-                
-                <li><a href="#sair" onclick="window.location.href='./login.html'">Sair
-                    <span class="material-symbols-outlined">logout</span> 
-                </a></li>
-            </ul>
-        </div>
-       
-        <div class="user" onclick="toggleUserMenu()">
-            <img src="https://i.pinimg.com/736x/14/4a/77/144a77448696e1047ba242c12aa522f0.jpg" alt="Ícone de usuário">
-        </div>
-        </div>
-    </div>
 
-    <ul class="menu">
-        <li><a href="#">Tarefas</a></li>
-        <li><a href="#">Perguntas</a></li>
-        <li><a href="#">Ranking</a></li>
-        <li><a href="#">Membros</a></li>
-        <li><a href="#">Configurações</a></li>
-    </ul>
+            <div id="user-menu" class="user-menu">
+                <ul>
+                    <li><a href="#configuracoes" onclick="window.location.href='./configuracoes.html'">Configurações 
+                        <span class="material-symbols-outlined">settings</span>
+                    </a></li>
+                    
+                    <li><a href="#sair" onclick="window.location.href='./login.html'">Sair
+                        <span class="material-symbols-outlined">logout</span> 
+                    </a></li>
+                </ul>
+            </div>
+           
+            <div class="user" onclick="toggleUserMenu()">
+                <img src="https://i.pinimg.com/736x/14/4a/77/144a77448696e1047ba242c12aa522f0.jpg" alt="Ícone de usuário">
+            </div>
+        </div>
     </header>
     
     <div class="container">
@@ -91,24 +82,30 @@
                     </button>
                     <button class="btn add-time" onclick="addTime()">+5
                     </button>
-                    
                 </div>
             </div>
         </div>
     </div>
 
+    <audio id="timerEndSound" src="./audio/alarme.mp3" preload="auto"></audio>
+
     <script>
+        function toggleUserMenu() {
+            var menu = document.getElementById('user-menu');
+            menu.classList.toggle('show');
+        }
+
         let timer;
         let isRunning = false;
         let isPaused = false;
         let remainingTime = 25 * 60; // 25 minutos em segundos
 
-        const circularProgressBar = document.querySelector("#circularProgressBar");
         const circularProgressBarNumber = document.querySelector("#circularProgressBar .progress-value");
         const pauseButton = document.querySelector("#pauseButton");
         const resumeButton = document.querySelector("#resumeButton");
         const startButton = document.querySelector("#startButton");
         const title = document.querySelector("title");
+        const timerEndSound = document.getElementById("timerEndSound");
 
         pauseButton.style.display = 'none';
 
@@ -134,8 +131,11 @@
 
             timer = setInterval(() => {
                 if (remainingTime <= 0) {
+                    startButton.style.display = 'none';
+                    pauseButton.style.display = 'none';
                     clearInterval(timer);
                     isRunning = false;
+                    timerEndSound.play(); // Toca o áudio ao zerar
                     return;
                 }
 
@@ -148,16 +148,12 @@
 
         function pauseTimer() {
             isPaused = true;
-
-            // Mostrar o botão de retomar e ocultar o botão de pausar
             pauseButton.style.display = 'none';
             resumeButton.style.display = 'unset';
         }
 
         function resumeTimer() {
             isPaused = false;
-
-            // Mostrar o botão de pausar e ocultar o botão de retomar
             pauseButton.style.display = 'unset';
             resumeButton.style.display = 'none';
         }
@@ -166,14 +162,17 @@
             clearInterval(timer);
             isRunning = false;
             isPaused = false;
-
-            // Mostrar o botão de pausar e ocultar o botão de retomar
             pauseButton.style.display = 'none';
             resumeButton.style.display = 'none';
             startButton.style.display = 'unset';
         }
 
         function resetTimer() {
+            if (timer <= 0) {
+                pauseButton.style.display = 'none';
+                resumeButton.style.display = 'unset';
+                startButton.style.display = 'none';
+            }
             stopTimer();
             remainingTime = 25 * 60; // Reiniciar para 25 minutos
             updateDisplay();
@@ -182,11 +181,6 @@
         function addTime() {
             remainingTime += 5 * 60;
             updateDisplay();
-        }
-
-        function toggleUserMenu() {
-            var menu = document.getElementById('user-menu');
-            menu.classList.toggle('show');
         }
 
         // Atualiza o display inicialmente
