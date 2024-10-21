@@ -30,8 +30,12 @@ body {
 }
 
 .logo {
-    font-size: 1.5rem;
-    margin-right: 2rem;
+    cursor: pointer;
+    margin-right: 40px;
+}
+
+.logo img {
+    height: 40px;
 }
 
 .icons {
@@ -81,7 +85,7 @@ body {
 
 .user-menu {
     display: none;
-    position: fixed;
+    position: absolute;
     right: 2rem;
     top: 4rem;
     background-color: #e0e0e0;
@@ -141,19 +145,22 @@ a {
 /*Fim da navbar*/
 
 .nomegrupo{
+   font-size: 30px;
    margin-bottom: 25px;
    text-align: center;
    padding: 15px;
+   color: #155967;
 }
 
 #msg-acertos {
-    color: #155967;
+    color: #424242;
     font-size: 30px;
     text-align: center;
+    
 }
 
 #perguntas-acertadas{
-    color: #155967;
+    color: #424242;
     font-size: 25px;
     text-align: center;
     padding: 10px;

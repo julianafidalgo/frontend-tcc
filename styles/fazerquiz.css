@@ -81,7 +81,7 @@ body {
 
 .user-menu {
     display: none;
-    position: fixed;
+    position: absolute;
     right: 2rem;
     top: 4rem;
     background-color: #e0e0e0;
@@ -184,10 +184,13 @@ p {
 }
 
 .logo {
-    font-size: 1.5rem;
-    margin-right: 2rem;
+    cursor: pointer;
+    margin-right: 40px;
 }
 
+.logo img {
+    height: 40px;
+}
 .icons {
     display: flex;
     gap: 1rem;
@@ -293,7 +296,7 @@ a {
 /*Fim da navbar*/
 
 .content {
-    padding: 20px;
+    padding: 5px;
     margin: 0 auto; 
     max-width: 1000px;
 }
@@ -307,6 +310,7 @@ h2 {
 }
 
 #group-name{
+    color: #155967;
     padding-bottom: 15px;
 }
 

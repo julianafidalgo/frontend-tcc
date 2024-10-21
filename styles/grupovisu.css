@@ -30,8 +30,12 @@ body {
 }
 
 .logo {
-    font-size: 1.5rem;
-    margin-right: 2rem;
+    cursor: pointer;
+    margin-right: 40px;
+}
+
+.logo img {
+    height: 40px;
 }
 
 .icons {
@@ -81,7 +85,7 @@ body {
 
 .user-menu {
     display: none;
-    position: fixed;
+    position: absolute;
     right: 2rem;
     top: 4rem;
     background-color: #e0e0e0;
@@ -137,12 +141,28 @@ a {
     color: #333; 
 }
 
+.infoGroup {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 25%;
+}
+
 .group{
     text-align: center;
     color: #155967;
     font-size: 30px;
-    padding: 15px;
     font-weight: bold;
+}
+
+.descGroup {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 15px;
+    padding: 15px;
+    max-height: 200px;
+    overflow-y: auto;
 }
 
 .back-to-groups {
@@ -150,8 +170,9 @@ a {
     align-items: center;
     position: relative;
     left: 50px;
-    bottom: 40px;
+    top: 30px;
     cursor: pointer;
+    width: 10%;
 }
 
 .back-to-groups .material-symbols-outlined {

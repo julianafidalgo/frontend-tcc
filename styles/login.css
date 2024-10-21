@@ -15,7 +15,7 @@ body {
   .container {
     background-color: #fff;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(21, 89, 103, 0.4) 5px 5px, rgba(21, 89, 103, 0.3) 10px 10px, rgba(21, 89, 103, 0.2) 15px 15px, rgba(21, 89, 103, 0.1) 20px 20px, rgba(21, 89, 103, 0.05) 25px 25px;
     padding: 30px;
     width: 350px;
   }
@@ -26,7 +26,7 @@ body {
   }
 
   .logo img {
-    width: 100px;
+    width: 90px;
   }
 
   .formulario {
@@ -82,12 +82,13 @@ body {
   }
 
   .esqueci-senha a {
-    color:  #80c8d8;
+    color: #559da8;
     text-decoration: none;
   }
 
   .esqueci-senha a:hover {
     text-decoration: underline;
+    color: #559da8;
   }
 
 .conta{
@@ -101,11 +102,12 @@ body {
   }
 
   .criar-conta a {
-    color: #80c8d8;
+    color: #559da8;
     text-decoration: none;
   }
 
   .criar-conta a:hover {
+    color: #559da8;
     text-decoration: underline;
   }
 

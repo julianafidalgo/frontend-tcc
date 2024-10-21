@@ -18,15 +18,14 @@ body {
     margin: 0 auto;
     background-color: white;
     padding: 30px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(21, 89, 103, 0.4) 5px 5px, rgba(21, 89, 103, 0.3) 10px 10px, rgba(21, 89, 103, 0.2) 15px 15px, rgba(21, 89, 103, 0.1) 20px 20px, rgba(21, 89, 103, 0.05) 25px 25px;
     border-radius: 5px;
     text-align: center;
     position: relative;
 }
 
 .logo img {
-    width: 100px;
-    height: auto;
+    width: 90px;
     margin-bottom: 20px;
 }
 

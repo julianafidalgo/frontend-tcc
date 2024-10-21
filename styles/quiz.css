@@ -66,8 +66,12 @@ p {
 }
 
 .logo {
-    font-size: 1.5rem;
-    margin-right: 2rem;
+    cursor: pointer;
+    margin-right: 40px;
+}
+
+.logo img {
+    height: 40px;
 }
 
 .icons {
@@ -117,7 +121,7 @@ p {
 
 .user-menu {
     display: none;
-    position: fixed;
+    position: absolute;
     right: 2rem;
     top: 4rem;
     background-color: #e0e0e0;
@@ -189,6 +193,7 @@ h2 {
 }
 
 #group-name{
+    color: #155967;
     padding-bottom: 15px;
 }
 

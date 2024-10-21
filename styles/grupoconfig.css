@@ -30,10 +30,13 @@ body {
 }
 
 .logo {
-    font-size: 1.5rem;
-    margin-right: 2rem;
+    cursor: pointer;
+    margin-right: 40px;
 }
 
+.logo img {
+    height: 40px;
+}
 .icons {
     display: flex;
     gap: 1rem;
@@ -81,7 +84,7 @@ body {
 
 .user-menu {
     display: none;
-    position: fixed;
+    position: absolute;
     right: 2rem;
     top: 4rem;
     background-color: #e0e0e0;
@@ -141,16 +144,14 @@ a {
 
 /*Fim da navbar*/
 .content {
-    flex: 1;
-    padding: 40px;
+    padding: 15px;
 }
 
 h2 {
+    color: #155967;
     font-size: 30px;
     text-align: center;
-    margin-top: 10px;
-    color: #155967;
-    padding-bottom: 30px;
+    margin-bottom: 20px; /* Espaço abaixo do título */
 }
 
 .profile-box {

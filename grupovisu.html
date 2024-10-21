@@ -8,30 +8,31 @@
     <title>Tarefas</title>  
 </head>
 <body>
-    <header>
-        <div class="navbar">
-            <div class="logo-container">
-                <h1 class="logo">UniFocus</h1>
-                <div class="icons">
-                    <a href="#grupos" onclick="window.location.href='./grupos.html'">
-                        <span class="material-symbols-outlined">groups</span> 
-                        <span class="link-texto">Grupos</span>
-                    </a>
-                    <a href="#cronometro" onclick="window.location.href='./pomodoro.html'">
-                        <span class="material-symbols-outlined">alarm</span> 
-                        <span class="link-texto">Cronômetro</span>
-                    </a>
-                    </a>
-                    <a href="#ranking" onclick="window.location.href='./ranking.html'">
-                        <span class="material-symbols-outlined">star</span>
-                        <span class="link-texto">Ranking</span>
-                    </a>
-                    <a href="#tarefas" onclick="window.location.href='./tarefas.html'">
-                        <span class="material-symbols-outlined">view_kanban</span>
-                        <span class="link-texto">Tarefas</span>
-                    </a> </div>
+    <div class="navbar">
+        <div class="logo-container">
+            <div class="logo" onclick="window.location.href='./telaprincipal.html'" >
+                <img src="./img/logo_nav.png" alt="Logo">
             </div>
-            
+            <div class="icons">
+                <a href="#grupos" onclick="window.location.href='./grupos.html'">
+                    <span class="material-symbols-outlined">groups</span> 
+                    <span class="link-texto">Grupos</span>
+                </a>
+                <a href="#cronometro" onclick="window.location.href='./pomodoro.html'">
+                    <span class="material-symbols-outlined">alarm</span> 
+                    <span class="link-texto">Cronômetro</span>
+                </a>
+                </a>
+                <a href="#ranking" onclick="window.location.href='./ranking.html'">
+                    <span class="material-symbols-outlined">star</span>
+                    <span class="link-texto">Ranking</span>
+                </a>
+                <a href="#tarefas" onclick="window.location.href='./tarefas.html'">
+                    <span class="material-symbols-outlined">view_kanban</span>
+                    <span class="link-texto">Tarefas</span>
+                </a> </div>
+        </div>
+        
         <div id="user-menu" class="user-menu">
             <ul>
                 <li><a href="#configuracoes" onclick="window.location.href='./configuracoes.html'">Configurações 
@@ -43,7 +44,7 @@
         </a></li>
             </ul>
         </div>
-       
+        
         <div class="user" onclick="toggleUserMenu()">
             <img src="https://i.pinimg.com/736x/14/4a/77/144a77448696e1047ba242c12aa522f0.jpg" alt="Ícone de usuário">
         </div>
@@ -56,19 +57,22 @@
         <li><a href="#">Membros</a></li>
         <li><a href="#">Configurações</a></li>
     </ul>
-        <div class="group">{Nome do grupo}
-        </div>
 
-        <div class="back-to-groups" onclick="window.location.href='./grupos.html'">
-            <span id="back" class="material-symbols-outlined">arrow_back_ios</span>
-            <a class="groups">Grupos</a>
+    <div class="back-to-groups" onclick="window.location.href='./grupos.html'">
+        <span id="back" class="material-symbols-outlined">arrow_back_ios</span>
+        <a class="groups">Grupos</a>
+    </div>
+    <div class="infoGroup">
+        <div class="group">{Nome do grupo}</div>
+        <div class="descGroup">
+            Mais que uma mão estendida
         </div>
-        <script>
-            function toggleUserMenu() {
-                var menu = document.getElementById('user-menu');
-                menu.classList.toggle('show');
-            }
-        </script>
+    </div>
 
-</header>
+    <script>
+        function toggleUserMenu() {
+            var menu = document.getElementById('user-menu');
+            menu.classList.toggle('show');
+        }
+    </script>
 </body>

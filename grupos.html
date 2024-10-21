@@ -11,7 +11,9 @@
     <header>
         <div class="navbar">
             <div class="logo-container">
-                <h1 class="logo">UniFocus</h1>
+                <div class="logo" onclick="window.location.href='./telaprincipal.html'" >
+                    <img src="./img/logo_nav.png" alt="Logo">
+                </div>
                 <div class="icons">
                     <a href="#grupos" onclick="window.location.href='./grupos.html'">
                         <span class="material-symbols-outlined">groups</span> 
@@ -67,9 +69,12 @@
 
     <div id="createGroupModal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeCreateGroupModal()">&times;</span>
+            <div class="div-close">
+                <span class="close" onclick="closeCreateGroupModal()">&times;</span>
+            </div>
             <h2 class="titulo-novo-grupo">Criar Novo Grupo</h2>
-            <input type="text" id="groupName" placeholder="Nome do grupo" required>
+            <input type="text" id="groupName" placeholder="Nome do grupo" required />
+            <textarea id="groupDesc" placeholder="Descrição do grupo" required></textarea>
             <button id=criar onclick="createGroup()">Criar grupo</button>
         </div>
     </div>
