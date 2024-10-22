@@ -37,10 +37,14 @@ body {
 .logo img {
     height: 40px;
 }
-
 .icons {
     display: flex;
     gap: 1rem;
+}
+
+.icons a {
+    padding: 0.5rem 0.4rem; 
+    border-radius: 6px;
 }
 
 .icon {
@@ -140,6 +144,8 @@ a {
     background-color: #c0c0c0; 
     color: #333; 
 }
+
+
 /*Fim da navbar*/
 
 .quiz-container {

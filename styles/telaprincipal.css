@@ -82,6 +82,10 @@ body {
     display: flex;
     gap: 1rem;
 }
+.icons a {
+    padding: 0.5rem 0.4rem; 
+    border-radius: 6px;
+}
 
 .icon {
     display: flex;
@@ -93,6 +97,7 @@ body {
     width: 40px;
     height: 40px;
 }
+
 
 .user {
     cursor: pointer;

@@ -167,7 +167,7 @@ p {
 }
 
 /*Início da header/topbar/navbar*/
-  .navbar {
+.navbar {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -194,6 +194,11 @@ p {
 .icons {
     display: flex;
     gap: 1rem;
+}
+
+.icons a {
+    padding: 0.5rem 0.4rem; 
+    border-radius: 6px;
 }
 
 .icon {
@@ -238,7 +243,7 @@ p {
 
 .user-menu {
     display: none;
-    position: fixed;
+    position: absolute;
     right: 2rem;
     top: 4rem;
     background-color: #e0e0e0;
@@ -286,13 +291,15 @@ a {
 .user-menu a:hover {
     background-color: #c0c0c0; 
     color: #333;
-  
+    
 }
 
 .menu li a:hover {
     background-color: #c0c0c0; 
     color: #333; 
 }
+
+
 /*Fim da navbar*/
 
 .content {
